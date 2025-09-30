@@ -16,12 +16,24 @@ export function LanguageSwitcher() {
           <span className="text-sm font-medium">{language === "th" ? "ไทย" : "EN"}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage("th")} className="cursor-pointer">
+      <DropdownMenuContent align="end" className="z-[100] min-w-[150px]">
+        <DropdownMenuItem
+          onClick={() => {
+            console.log("[v0] Switching to Thai")
+            setLanguage("th")
+          }}
+          className="cursor-pointer"
+        >
           <span className="mr-2">🇹🇭</span>
           ภาษาไทย
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("en")} className="cursor-pointer">
+        <DropdownMenuItem
+          onClick={() => {
+            console.log("[v0] Switching to English")
+            setLanguage("en")
+          }}
+          className="cursor-pointer"
+        >
           <span className="mr-2">🇬🇧</span>
           English
         </DropdownMenuItem>
