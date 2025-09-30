@@ -56,10 +56,10 @@ export default function CustomerSignUpPage() {
         email: formData.email,
         password: formData.password,
         options: {
-          emailRedirectTo:
-            process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/customer/dashboard`,
+          emailRedirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/products`,
           data: {
-            company_name: formData.companyName,
+            full_name: formData.email.split("@")[0],
+            company_name: formData.companyName || null,
             user_type: "customer",
           },
         },

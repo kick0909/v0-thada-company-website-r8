@@ -24,7 +24,10 @@ export default async function CustomerDashboard() {
     redirect("/customer/login")
   }
 
-  const companyName = user.user_metadata?.company_name || "Your Company"
+  const { data: customer } = await supabase.from("customers").select("*").eq("id", user.id).maybeSingle()
+
+  const companyName = customer?.company_name || "Your Company"
+  const fullName = customer?.full_name || user.email?.split("@")[0] || "User"
 
   return (
     <div className="min-h-screen bg-muted/30">
@@ -41,7 +44,7 @@ export default async function CustomerDashboard() {
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-2 text-sm">
               <User className="h-4 w-4 text-muted-foreground" />
-              <span className="text-muted-foreground">{user.email}</span>
+              <span className="text-muted-foreground">{fullName}</span>
             </div>
             <form action={signOut}>
               <Button variant="outline" size="sm" className="gap-2 bg-transparent">
@@ -57,7 +60,7 @@ export default async function CustomerDashboard() {
       <main className="container mx-auto p-6 space-y-8">
         {/* Welcome Section */}
         <div className="space-y-2">
-          <h2 className="text-3xl font-bold">Welcome back!</h2>
+          <h2 className="text-3xl font-bold">Welcome back, {fullName}!</h2>
           <p className="text-muted-foreground">Manage your equipment rentals and maintenance requests</p>
         </div>
 
