@@ -66,7 +66,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-red-600"></div>
+          <div className="absolute inset-0 bg-[#C94444]"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">ติดต่อเรา</h1>
@@ -88,7 +88,7 @@ export default function ContactPage() {
             {contactMethods.map((method, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <method.icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{method.title}</h3>
@@ -192,7 +192,7 @@ export default function ContactPage() {
             {officeHours.map((schedule, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Clock className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{schedule.day}</h3>
@@ -206,11 +206,11 @@ export default function ContactPage() {
       </section>
 
       {/* Emergency Contact */}
-      <section className="py-20 bg-red-50">
+      <section className="py-20 bg-[#C94444]/10">
         <div className="container mx-auto px-6">
-          <Card className="max-w-2xl mx-auto border-red-200">
+          <Card className="max-w-2xl mx-auto border-[#C94444]/30">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Headphones className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="text-2xl text-primary">สายด่วนฉุกเฉิน</CardTitle>

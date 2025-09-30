@@ -108,7 +108,9 @@ export default function SignUpPage() {
                     />
                   </div>
                   {error && (
-                    <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600 border-2 border-red-200">{error}</div>
+                    <div className="rounded-lg bg-[#C94444]/10 p-3 text-sm text-[#C94444] border-2 border-[#C94444]/30">
+                      {error}
+                    </div>
                   )}
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? t("creatingAccount") : t("signupButton")}

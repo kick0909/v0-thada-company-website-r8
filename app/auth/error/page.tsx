@@ -10,16 +10,16 @@ export default async function ErrorPage({ searchParams }: { searchParams: Promis
     <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
-          <Card className="border-2 border-red-200">
+          <Card className="border-2 border-[#C94444]/30">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
-                <AlertCircle className="h-8 w-8 text-red-600" />
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#C94444]/10">
+                <AlertCircle className="h-8 w-8 text-[#C94444]" />
               </div>
               <CardTitle className="text-2xl">Authentication Error</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {params?.error ? (
-                <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600 border-2 border-red-200">
+                <div className="rounded-lg bg-[#C94444]/10 p-3 text-sm text-[#C94444] border-2 border-[#C94444]/30">
                   Error: {params.error}
                 </div>
               ) : (

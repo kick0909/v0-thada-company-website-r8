@@ -46,19 +46,19 @@ export function Header() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <a href="/" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium">
               {t("home")}
             </a>
-            <a href="/rental" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <a href="/rental" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium">
               {t("rental")}
             </a>
-            <a href="/maintenance" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <a href="/maintenance" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium">
               {t("maintenance")}
             </a>
-            <a href="/about" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <a href="/about" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium">
               {t("about")}
             </a>
-            <a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <a href="/contact" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium">
               {t("contact")}
             </a>
           </nav>
@@ -72,7 +72,7 @@ export function Header() {
               </Button>
             </Link>
             <Link href="/customer/signup">
-              <Button className="bg-red-600 hover:bg-red-700 text-white">{t("signup")}</Button>
+              <Button className="bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
             </Link>
           </div>
 
@@ -85,19 +85,19 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col gap-3">
-              <a href="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
+              <a href="/" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium py-2">
                 {t("home")}
               </a>
-              <a href="/rental" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
+              <a href="/rental" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium py-2">
                 {t("rental")}
               </a>
-              <a href="/maintenance" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
+              <a href="/maintenance" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium py-2">
                 {t("maintenance")}
               </a>
-              <a href="/about" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
+              <a href="/about" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium py-2">
                 {t("about")}
               </a>
-              <a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
+              <a href="/contact" className="text-gray-700 hover:text-[#C94444] transition-colors font-medium py-2">
                 {t("contact")}
               </a>
               <div className="flex flex-col gap-2 mt-3 pt-3 border-t">
@@ -109,7 +109,7 @@ export function Header() {
                   </Button>
                 </Link>
                 <Link href="/customer/signup">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white">{t("signup")}</Button>
+                  <Button className="w-full bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
                 </Link>
               </div>
             </div>

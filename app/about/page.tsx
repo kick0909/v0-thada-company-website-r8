@@ -87,7 +87,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-red-600"></div>
+          <div className="absolute inset-0 bg-[#C94444]"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-red-500/30 to-orange-500/30 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-2xl">
+              <div className="aspect-square bg-gradient-to-br from-[#C94444]/30 to-orange-500/30 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-2xl">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-4 drop-shadow-lg">15+</div>
                   <div className="text-xl text-white/90 drop-shadow">ปีของประสบการณ์</div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
               <Card key={index} className="bg-background">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#C94444]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <value.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-red-200 hidden md:block"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#C94444]/30 hidden md:block"></div>
 
               <div className="space-y-8">
                 {timeline.map((item, index) => (
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
           <Card className="max-w-2xl mx-auto">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MapPin className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">สำนักงานใหญ่</h3>

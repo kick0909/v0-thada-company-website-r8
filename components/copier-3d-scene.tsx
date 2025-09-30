@@ -17,7 +17,7 @@ function AnimatedCopierMachine() {
         {/* Top scanner lid */}
         <mesh position={[0, 0.85, 0]} rotation={[-0.1, 0, 0]}>
           <boxGeometry args={[2.5, 0.2, 1.8]} />
-          <meshStandardMaterial color="#dc2626" metalness={0.5} roughness={0.3} />
+          <meshStandardMaterial color="#C94444" metalness={0.5} roughness={0.3} />
         </mesh>
 
         {/* Scanner glass */}
@@ -47,13 +47,13 @@ function AnimatedCopierMachine() {
         {/* Output tray */}
         <mesh position={[0, 0.2, -0.9]}>
           <boxGeometry args={[2.2, 0.1, 0.3]} />
-          <meshStandardMaterial color="#dc2626" metalness={0.4} roughness={0.4} />
+          <meshStandardMaterial color="#C94444" metalness={0.4} roughness={0.4} />
         </mesh>
 
         {/* Brand logo area */}
         <mesh position={[-0.8, 0.3, 0.91]}>
           <boxGeometry args={[0.6, 0.2, 0.01]} />
-          <meshStandardMaterial color="#ef4444" />
+          <meshStandardMaterial color="#C94444" />
         </mesh>
 
         {/* Side vents */}
@@ -76,13 +76,13 @@ function FloatingShapes() {
       <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
         <mesh position={[-3, 2, -2]}>
           <torusGeometry args={[0.5, 0.2, 16, 32]} />
-          <meshStandardMaterial color="#dc2626" metalness={0.6} roughness={0.3} />
+          <meshStandardMaterial color="#C94444" metalness={0.6} roughness={0.3} />
         </mesh>
       </Float>
       <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
         <mesh position={[3, -1, -1]}>
           <octahedronGeometry args={[0.6]} />
-          <meshStandardMaterial color="#ef4444" metalness={0.7} roughness={0.2} />
+          <meshStandardMaterial color="#C94444" metalness={0.7} roughness={0.2} />
         </mesh>
       </Float>
       <Float speed={1.8} rotationIntensity={0.8} floatIntensity={2.5}>
@@ -101,7 +101,7 @@ export default function Copier3DScene() {
       <Suspense fallback={null}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
-        <pointLight position={[-10, -10, -5]} intensity={0.5} color="#ef4444" />
+        <pointLight position={[-10, -10, -5]} intensity={0.5} color="#C94444" />
         <AnimatedCopierMachine />
         <FloatingShapes />
         <Environment preset="city" />

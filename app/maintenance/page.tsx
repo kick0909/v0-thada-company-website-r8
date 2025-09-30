@@ -76,7 +76,7 @@ export default function MaintenancePage() {
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-red-600"></div>
+          <div className="absolute inset-0 bg-[#C94444]"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">
@@ -114,7 +114,7 @@ export default function MaintenancePage() {
             {maintenanceServices.map((service, index) => (
               <Card key={index} className="h-full">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mb-4">
                     <service.icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -148,7 +148,7 @@ export default function MaintenancePage() {
             {responseTime.map((item, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#C94444]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Clock className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
@@ -171,7 +171,7 @@ export default function MaintenancePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {servicePackages.map((pkg, index) => (
-              <Card key={index} className={`${pkg.included ? "border-primary bg-red-50" : ""}`}>
+              <Card key={index} className={`${pkg.included ? "border-primary bg-[#C94444]/10" : ""}`}>
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-2xl">{pkg.name}</CardTitle>
