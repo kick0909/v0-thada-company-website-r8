@@ -10,10 +10,27 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: "Thada Copy and Supply Ltd, Part. - บริการเช่าเครื่องถ่ายเอกสารและเครื่องพิมพ์",
-  description:
-    "บริการเช่าเครื่องถ่ายเอกสาร เครื่องพิมพ์ และอุปกรณ์สำนักงานคุณภาพสูง พร้อมบริการบำรุงรักษาครบวงจร | Professional copier and printer rental services with comprehensive maintenance",
-    generator: 'v0.app'
+  title: "Thada Copy and Supply Ltd, Part.",
+  description: "ธาดาก็อปปี้ แอนด์ ซัพพลาย - บริการเช่าเครื่องถ่ายเอกสาร เครื่องพิมพ์ และอุปกรณ์สำนักงานคุณภาพสูง พร้อมบริการบำรุงรักษาครบวงจร",
+  applicationName: "Thada Copy and Supply Ltd, Part.",
+  generator: "ธาดาก็อปปี้ แอนด์ ซัพพลาย",
+  keywords: ["เช่าเครื่องถ่ายเอกสาร", "เช่าเครื่องพิมพ์", "copier rental", "printer rental", "office equipment"],
+  authors: [{ name: "Thada Copy and Supply Ltd, Part." }],
+  creator: "ธาดาก็อปปี้ แอนด์ ซัพพลาย",
+  publisher: "Thada Copy and Supply Ltd, Part.",
+  openGraph: {
+    type: "website",
+    locale: "th_TH",
+    url: "https://thadacopy.com",
+    siteName: "Thada Copy and Supply Ltd, Part.",
+    title: "Thada Copy and Supply Ltd, Part.",
+    description: "ธาดาก็อปปี้ แอนด์ ซัพพลาย - บริการเช่าเครื่องถ่ายเอกสาร เครื่องพิมพ์ และอุปกรณ์สำนักงานคุณภาพสูง",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thada Copy and Supply Ltd, Part.",
+    description: "ธาดาก็อปปี้ แอนด์ ซัพพลาย - บริการเช่าเครื่องถ่ายเอกสารและเครื่องพิมพ์คุณภาพสูง",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

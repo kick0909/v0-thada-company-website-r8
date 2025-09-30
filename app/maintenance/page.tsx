@@ -74,25 +74,27 @@ export default function MaintenancePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-red-50 to-red-100 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/maintenance-service.jpg"
-            alt="Professional maintenance service"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <div className="absolute inset-0 bg-red-600"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">บริการซ่อมบำรุงเครื่องถ่ายเอกสาร</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">
+            บริการซ่อมบำรุงเครื่องถ่ายเอกสาร
+          </h1>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 text-pretty drop-shadow">
             ทีมช่างผู้เชี่ยวชาญพร้อมดูแลเครื่องของคุณให้ทำงานได้อย่างมีประสิทธิภาพตลอดเวลา
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button size="lg" className="text-lg px-8 py-6 bg-white text-primary hover:bg-white/90">
               <Phone className="mr-2 h-5 w-5" />
               โทรขอบริการ 064-797-9944
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 bg-transparent border-white text-white hover:bg-white/10"
+            >
               <Calendar className="mr-2 h-5 w-5" />
               นัดหมายล่วงหน้า
             </Button>

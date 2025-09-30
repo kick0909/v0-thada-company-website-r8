@@ -85,35 +85,37 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-red-50 to-red-100 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/about-company.jpg"
-            alt="About THADA company"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-orange-500"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">เกี่ยวกับ THADA</h1>
-              <p className="text-xl text-muted-foreground mb-8 text-pretty">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">
+                เกี่ยวกับ THADA
+              </h1>
+              <p className="text-xl text-white/90 mb-8 text-pretty drop-shadow">
                 ผู้นำด้านบริการเช่าและบำรุงรักษาเครื่องถ่ายเอกสารในประเทศไทย ด้วยประสบการณ์กว่า 15 ปี และความมุ่งมั่นในการให้บริการที่เป็นเลิศ
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6">
+                <Button size="lg" className="text-lg px-8 py-6 bg-white text-primary hover:bg-white/90">
                   ติดต่อเรา
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 bg-transparent border-white text-white hover:bg-white/10"
+                >
                   ดูแพ็คเกจเช่า
                 </Button>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-red-500/30 to-orange-500/30 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-2xl">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-primary mb-4">15+</div>
-                  <div className="text-xl text-foreground">ปีของประสบการณ์</div>
+                  <div className="text-6xl font-bold text-white mb-4 drop-shadow-lg">15+</div>
+                  <div className="text-xl text-white/90 drop-shadow">ปีของประสบการณ์</div>
                 </div>
               </div>
             </div>

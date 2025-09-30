@@ -64,17 +64,13 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-red-50 to-red-100 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/contact-support.jpg"
-            alt="Contact support team"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-orange-500"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">ติดต่อเรา</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">ติดต่อเรา</h1>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 text-pretty drop-shadow">
             พร้อมให้คำปรึกษาและตอบทุกคำถามเกี่ยวกับบริการเช่าและซ่อมบำรุงเครื่องถ่ายเอกสาร
           </p>
         </div>
