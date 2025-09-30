@@ -95,7 +95,7 @@ function FloatingShapes() {
   )
 }
 
-export function Copier3DScene() {
+export default function Copier3DScene() {
   return (
     <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
       <Suspense fallback={null}>

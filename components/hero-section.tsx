@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
 import dynamic from "next/dynamic"
 
-const Copier3DScene = dynamic(() => import("./copier-3d-scene").then((mod) => ({ default: mod.Copier3DScene })), {
+const Copier3DScene = dynamic(() => import("./copier-3d-scene"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
