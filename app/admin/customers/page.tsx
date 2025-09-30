@@ -17,7 +17,7 @@ export default async function CustomersPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) {
+  if (!user || user.email !== "thadacopy@gmail.com") {
     redirect("/auth/login")
   }
 

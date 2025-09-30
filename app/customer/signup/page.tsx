@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -13,6 +12,7 @@ import { useState } from "react"
 import { Building2, ArrowLeft, CheckCircle2 } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { createBrowserClient } from "@supabase/ssr"
 
 export default function CustomerSignUpPage() {
   const [formData, setFormData] = useState({
@@ -29,7 +29,6 @@ export default function CustomerSignUpPage() {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
-    const supabase = createClient()
     setIsLoading(true)
     setError(null)
 
@@ -52,7 +51,15 @@ export default function CustomerSignUpPage() {
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const supabase = createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      )
+
+      console.log("[v0] Starting signup process for:", formData.email)
+      console.log("[v0] Company name:", formData.companyName)
+
+      const { data: authData, error: authError } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
         options: {
@@ -64,9 +71,36 @@ export default function CustomerSignUpPage() {
           },
         },
       })
-      if (error) throw error
-      router.push("/customer/signup-success")
+
+      if (authError) {
+        console.error("[v0] Signup error:", authError)
+        console.error("[v0] Error code:", authError.code)
+        console.error("[v0] Error message:", authError.message)
+        console.error("[v0] Error details:", authError)
+        throw new Error(authError.message)
+      }
+
+      console.log("[v0] Auth signup successful:", authData.user?.id)
+
+      if (authData.user) {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+
+        const { data: customerData, error: customerError } = await supabase
+          .from("customers")
+          .select("*")
+          .eq("id", authData.user.id)
+          .single()
+
+        if (customerError) {
+          console.error("[v0] Customer record check error:", customerError)
+        } else {
+          console.log("[v0] Customer record created:", customerData)
+        }
+
+        router.push("/customer/signup-success")
+      }
     } catch (error: unknown) {
+      console.error("[v0] Caught error:", error)
       setError(error instanceof Error ? error.message : "An error occurred")
     } finally {
       setIsLoading(false)

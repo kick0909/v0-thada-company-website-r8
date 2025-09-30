@@ -20,7 +20,7 @@ export default async function ChatSessionPage({ params }: PageProps) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) {
+  if (!user || user.email !== "thadacopy@gmail.com") {
     redirect("/auth/login")
   }
 

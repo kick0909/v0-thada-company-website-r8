@@ -39,13 +39,29 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  if (request.nextUrl.pathname.startsWith("/admin")) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = "/auth/login"
+      return NextResponse.redirect(url)
+    }
+
+    const isAuthorizedEmail = user.email === "thadacopy@gmail.com"
+    if (!isAuthorizedEmail) {
+      const url = request.nextUrl.clone()
+      url.pathname = "/auth/login"
+      url.searchParams.set("error", "unauthorized_email")
+      return NextResponse.redirect(url)
+    }
+  }
+
   if (
     !user &&
     !request.nextUrl.pathname.startsWith("/auth") &&
-    (request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/customer/dashboard"))
+    request.nextUrl.pathname.startsWith("/customer/dashboard")
   ) {
     const url = request.nextUrl.clone()
-    url.pathname = request.nextUrl.pathname.startsWith("/admin") ? "/auth/login" : "/customer/login"
+    url.pathname = "/customer/login"
     return NextResponse.redirect(url)
   }
 

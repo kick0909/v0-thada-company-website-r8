@@ -22,7 +22,7 @@ export default async function AdminChatsPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) {
+  if (!user || user.email !== "thadacopy@gmail.com") {
     redirect("/auth/login")
   }
 

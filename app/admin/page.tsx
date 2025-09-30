@@ -19,7 +19,9 @@ export default async function AdminDashboard() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) {
+  const isAuthorizedEmail = user?.email === "thadacopy@gmail.com"
+
+  if (!user || !isAuthorizedEmail) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="max-w-md w-full border-2">
@@ -30,21 +32,34 @@ export default async function AdminDashboard() {
               </div>
             </div>
             <CardTitle className="text-2xl">Admin Dashboard</CardTitle>
-            <CardDescription>Please sign in to access the admin dashboard and manage your business</CardDescription>
+            <CardDescription>
+              {!user
+                ? "Please sign in to access the admin dashboard and manage your business"
+                : "Access denied. Only thadacopy@gmail.com can access this dashboard."}
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <Button asChild className="w-full" size="lg">
               <Link href="/auth/login">
                 <LogIn className="mr-2 h-4 w-4" />
-                Sign In
+                {!user ? "Sign In" : "Sign In with Authorized Account"}
               </Link>
             </Button>
-            <div className="text-center text-sm text-muted-foreground">
-              Don't have an account?{" "}
-              <Link href="/auth/sign-up" className="text-primary hover:underline font-medium">
-                Sign up
-              </Link>
-            </div>
+            {user && !isAuthorizedEmail && (
+              <div className="text-center text-sm text-muted-foreground">
+                <Link href="/auth/login" className="text-primary hover:underline font-medium">
+                  Sign in with authorized account
+                </Link>
+              </div>
+            )}
+            {!user && (
+              <div className="text-center text-sm text-muted-foreground">
+                Don't have an account?{" "}
+                <Link href="/auth/sign-up" className="text-primary hover:underline font-medium">
+                  Sign up
+                </Link>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

@@ -20,6 +20,13 @@ export default function LoginPage() {
   const router = useRouter()
   const { t } = useLanguage()
 
+  useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get("error") === "unauthorized_email") {
+      setError("Access denied. Only thadacopy@gmail.com can access the admin dashboard.")
+    }
+  })
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     const supabase = createClient()
@@ -27,6 +34,10 @@ export default function LoginPage() {
     setError(null)
 
     try {
+      if (email !== "thadacopy@gmail.com") {
+        throw new Error("Access denied. Only thadacopy@gmail.com can access the admin dashboard.")
+      }
+
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
