@@ -33,11 +33,10 @@ export default function CustomerLoginPage() {
         password,
       })
       if (error) throw error
-      router.push("/customer/dashboard")
-      router.refresh()
+      console.log("[v0] Login successful, redirecting to /products")
+      window.location.href = "/products"
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred")
-    } finally {
       setIsLoading(false)
     }
   }

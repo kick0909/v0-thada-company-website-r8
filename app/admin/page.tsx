@@ -2,7 +2,7 @@ import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { LayoutDashboard, Package, Wrench, Users, LogOut, LogIn } from "lucide-react"
+import { LayoutDashboard, Package, Wrench, Users, LogOut, LogIn, MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 async function signOut() {
@@ -81,6 +81,23 @@ export default async function AdminDashboard() {
 
         {/* Dashboard Cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Card className="border-2 hover:border-primary transition-colors">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <MessageCircle className="h-5 w-5 text-primary" />
+                </div>
+                <CardTitle>Chat Management</CardTitle>
+              </div>
+              <CardDescription>View and respond to customer chats</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full">
+                <Link href="/admin/chats">View Chats</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
           <Card className="border-2 hover:border-primary transition-colors">
             <CardHeader>
               <div className="flex items-center gap-2">

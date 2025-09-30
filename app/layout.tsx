@@ -2,6 +2,7 @@ import type React from "react"
 import "./globals.css"
 import { Roboto } from "next/font/google"
 import { LanguageProvider } from "@/lib/language-context"
+import { ChatWidget } from "@/components/chat-widget"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -37,7 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${roboto.variable} font-sans`}>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <ChatWidget />
+        </LanguageProvider>
       </body>
     </html>
   )

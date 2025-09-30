@@ -37,22 +37,22 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-background">{t("th", "บริการ", "Services")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/rental" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "เช่าเครื่องถ่ายเอกสาร", "Copier Rental")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/rental" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "เช่าเครื่องพิมพ์", "Printer Rental")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/maintenance" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "บริการซ่อมบำรุง", "Maintenance Service")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "อุปกรณ์สำนักงาน", "Office Supplies")}
                 </a>
               </li>
@@ -63,12 +63,12 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-background">{t("th", "บริษัท", "Company")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/about" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "เกี่ยวกับเรา", "About Us")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-background/80 hover:text-background transition-colors">
+                <a href="/contact" className="text-background/80 hover:text-background transition-colors">
                   {t("th", "ติดต่อเรา", "Contact")}
                 </a>
               </li>

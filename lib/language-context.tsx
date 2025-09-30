@@ -82,6 +82,8 @@ const translations = {
     promoDescription: "สำหรับการเช่าครั้งแรก",
     promoSubtext: "ใช้โค้ด: FIRST20",
     promoCTA: "เริ่มเช่าเลย",
+    manageAccount: "จัดการบัญชี",
+    signOut: "ออกจากระบบ",
   },
   en: {
     home: "Home",
@@ -155,6 +157,8 @@ const translations = {
     promoDescription: "On your first rental",
     promoSubtext: "Use code: FIRST20",
     promoCTA: "Start Renting",
+    manageAccount: "Manage Account",
+    signOut: "Sign Out",
   },
 }
 

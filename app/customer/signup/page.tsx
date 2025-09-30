@@ -154,7 +154,6 @@ export default function CustomerSignUpPage() {
                       id="companyName"
                       type="text"
                       placeholder="Your Company Inc."
-                      required
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                       className="h-11"

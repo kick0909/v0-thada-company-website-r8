@@ -51,7 +51,7 @@ export function HeroSection() {
             <div className="bg-white rounded-2xl p-8 shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
               <div className="flex items-center justify-center h-[400px] lg:h-[500px]">
                 <img
-                  src="/copier-transparent-1.jpg"
+                  src="/ricoh-mpc3004-color-multifunction.jpg"
                   alt="Office Copier"
                   className="w-full h-full object-contain drop-shadow-xl"
                 />

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
@@ -33,11 +32,10 @@ export default function LoginPage() {
         password,
       })
       if (error) throw error
-      router.push("/admin")
-      router.refresh()
+
+      window.location.href = "/admin"
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred")
-    } finally {
       setIsLoading(false)
     }
   }
@@ -89,12 +87,6 @@ export default function LoginPage() {
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? t("loggingIn") : t("loginButton")}
                   </Button>
-                </div>
-                <div className="mt-4 text-center text-sm">
-                  {t("noAccount")}{" "}
-                  <Link href="/auth/sign-up" className="text-primary hover:underline underline-offset-4 font-medium">
-                    {t("signupLink")}
-                  </Link>
                 </div>
               </form>
             </CardContent>

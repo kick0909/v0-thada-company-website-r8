@@ -2,15 +2,40 @@
 
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, Mail, MapPin, User } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { UserDropdown } from "@/components/user-dropdown"
 import { useLanguage } from "@/lib/language-context"
+import { createClient } from "@/lib/supabase/client"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t, language } = useLanguage()
+  const [user, setUser] = useState<{ email: string } | null>(null)
+
+  useEffect(() => {
+    const supabase = createClient()
+
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) {
+        setUser({ email: user.email || "" })
+      }
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setUser({ email: session.user.email || "" })
+      } else {
+        setUser(null)
+      }
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
 
   return (
     <header className="bg-background shadow-sm">
@@ -65,15 +90,21 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
-            <Link href="/customer/login">
-              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent">
-                <User className="h-4 w-4 mr-2" />
-                {t("login")}
-              </Button>
-            </Link>
-            <Link href="/customer/signup">
-              <Button className="bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
-            </Link>
+            {user ? (
+              <UserDropdown email={user.email} />
+            ) : (
+              <>
+                <Link href="/customer/login">
+                  <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent">
+                    <User className="h-4 w-4 mr-2" />
+                    {t("login")}
+                  </Button>
+                </Link>
+                <Link href="/customer/signup">
+                  <Button className="bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,15 +133,21 @@ export function Header() {
               </a>
               <div className="flex flex-col gap-2 mt-3 pt-3 border-t">
                 <LanguageSwitcher />
-                <Link href="/customer/login">
-                  <Button variant="outline" className="w-full border-gray-300 text-gray-700 bg-transparent">
-                    <User className="h-4 w-4 mr-2" />
-                    {t("login")}
-                  </Button>
-                </Link>
-                <Link href="/customer/signup">
-                  <Button className="w-full bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
-                </Link>
+                {user ? (
+                  <UserDropdown email={user.email} />
+                ) : (
+                  <>
+                    <Link href="/customer/login">
+                      <Button variant="outline" className="w-full border-gray-300 text-gray-700 bg-transparent">
+                        <User className="h-4 w-4 mr-2" />
+                        {t("login")}
+                      </Button>
+                    </Link>
+                    <Link href="/customer/signup">
+                      <Button className="w-full bg-[#C94444] hover:bg-[#C94444]/90 text-white">{t("signup")}</Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </nav>

@@ -9,12 +9,8 @@ export async function updateSession(request: NextRequest) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-  console.log("[v0] Middleware - Supabase URL exists:", !!supabaseUrl)
-  console.log("[v0] Middleware - Supabase Key exists:", !!supabaseAnonKey)
-
   // If Supabase credentials are not available, just pass through
   if (!supabaseUrl || !supabaseAnonKey) {
-    console.log("[v0] Middleware - Skipping Supabase auth (no credentials)")
     return supabaseResponse
   }
 
@@ -43,25 +39,16 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user && !request.nextUrl.pathname.startsWith("/auth") && request.nextUrl.pathname.startsWith("/admin")) {
-    // Redirect unauthenticated users trying to access admin to login
+  if (
+    !user &&
+    !request.nextUrl.pathname.startsWith("/auth") &&
+    (request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/customer/dashboard"))
+  ) {
     const url = request.nextUrl.clone()
-    url.pathname = "/auth/login"
+    url.pathname = request.nextUrl.pathname.startsWith("/admin") ? "/auth/login" : "/customer/login"
     return NextResponse.redirect(url)
   }
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
-  // If you're creating a new response object with NextResponse.next() make sure to:
-  // 1. Pass the request in it, like so:
-  //    const myNewResponse = NextResponse.next({ request })
-  // 2. Copy over the cookies, like so:
-  //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
-  // 3. Change the myNewResponse object to fit your needs, but avoid changing
-  //    the cookies!
-  // 4. Finally:
-  //    return myNewResponse
-  // If this is not done, you may be causing the browser and server to go out
-  // of sync and terminate the user's session prematurely!
-
   return supabaseResponse
 }
