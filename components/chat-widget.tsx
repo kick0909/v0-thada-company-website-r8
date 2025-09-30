@@ -140,11 +140,13 @@ export function ChatWidget() {
       })
 
       if (error) {
-        // Only log to console, don't crash the chat
-        console.log("[v0] Chat database not set up yet. Visit /setup-chat-db to enable message storage.")
+        console.log("[v0] Chat messages not saving. Please run the SQL script: scripts/004_fix_chat_rls_policies.sql")
+        console.log("[v0] Error details:", error.message)
+      } else {
+        console.log("[v0] Chat message saved successfully")
       }
     } catch (error) {
-      console.log("[v0] Chat working in memory-only mode. Visit /setup-chat-db to enable database storage.")
+      console.log("[v0] Chat database error. Please run: scripts/004_fix_chat_rls_policies.sql")
     }
   }
 

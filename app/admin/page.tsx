@@ -76,7 +76,10 @@ export default async function AdminDashboard() {
             <h1 className="text-xl font-bold">THADA Admin Dashboard</h1>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">{user.email}</span>
+            <div className="flex flex-col items-end">
+              <span className="text-xs text-muted-foreground">Logged in as</span>
+              <span className="text-sm font-medium">{user.email}</span>
+            </div>
             <form action={signOut}>
               <Button variant="outline" size="sm" className="gap-2 bg-transparent">
                 <LogOut className="h-4 w-4" />
