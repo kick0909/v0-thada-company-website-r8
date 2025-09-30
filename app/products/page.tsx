@@ -1,26 +1,36 @@
+"use client"
+
+import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ProductGrid } from "@/components/product-grid"
-import { ProductFilters } from "@/components/product-filters"
+import { ProductFilters, type FilterState } from "@/components/product-filters"
+import { useLanguage } from "@/lib/language-context"
 
 export default function ProductsPage() {
+  const { t } = useLanguage()
+  const [filters, setFilters] = useState<FilterState>({
+    brands: [],
+    types: [],
+    priceRanges: [],
+  })
+  const [sortBy, setSortBy] = useState("default")
+
   return (
     <main className="min-h-screen">
       <Header />
       <div className="pt-8 pb-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">แพ็คเกจเช่าเครื่องถ่ายเอกสาร</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              เลือกแพ็คเกจเช่าที่เหมาะสมกับความต้องการของธุรกิจคุณ พร้อมบริการซ่อมบำรุงครบครัน
-            </p>
+            <h1 className="text-4xl font-bold mb-4">{t("productsTitle")}</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("productsSubtitle")}</p>
           </div>
           <div className="flex gap-8 lg:gap-12">
             <div className="w-72 flex-shrink-0">
-              <ProductFilters />
+              <ProductFilters filters={filters} onFilterChange={setFilters} />
             </div>
             <div className="flex-1">
-              <ProductGrid />
+              <ProductGrid filters={filters} sortBy={sortBy} onSortChange={setSortBy} />
             </div>
           </div>
         </div>

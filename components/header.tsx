@@ -5,9 +5,12 @@ import { Menu, X, Phone, Mail, MapPin, User } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { useLanguage } from "@/lib/language-context"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t, language } = useLanguage()
 
   return (
     <header className="bg-background shadow-sm">
@@ -25,10 +28,10 @@ export function Header() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                <span>กรุงเทพมหานคร</span>
+                <span>{t("location")}</span>
               </div>
             </div>
-            <div className="text-xs sm:text-sm font-medium">เปิดบริการ: จันทร์-ศุกร์ 8:00-17:00 น.</div>
+            <div className="text-xs sm:text-sm font-medium">{t("hours")}</div>
           </div>
         </div>
       </div>
@@ -44,31 +47,32 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <a href="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              หน้าแรก
+              {t("home")}
             </a>
             <a href="/rental" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              แพ็คเกจเช่า
+              {t("rental")}
             </a>
             <a href="/maintenance" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              บริการซ่อมบำรุง
+              {t("maintenance")}
             </a>
             <a href="/about" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              เกี่ยวกับเรา
+              {t("about")}
             </a>
             <a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              ติดต่อ
+              {t("contact")}
             </a>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link href="/customer/login">
               <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent">
                 <User className="h-4 w-4 mr-2" />
-                เข้าสู่ระบบ
+                {t("login")}
               </Button>
             </Link>
             <Link href="/customer/signup">
-              <Button className="bg-red-600 hover:bg-red-700 text-white">สมัครสมาชิก</Button>
+              <Button className="bg-red-600 hover:bg-red-700 text-white">{t("signup")}</Button>
             </Link>
           </div>
 
@@ -82,29 +86,30 @@ export function Header() {
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col gap-3">
               <a href="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
-                หน้าแรก
+                {t("home")}
               </a>
               <a href="/rental" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
-                แพ็คเกจเช่า
+                {t("rental")}
               </a>
               <a href="/maintenance" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
-                บริการซ่อมบำรุง
+                {t("maintenance")}
               </a>
               <a href="/about" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
-                เกี่ยวกับเรา
+                {t("about")}
               </a>
               <a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
-                ติดต่อ
+                {t("contact")}
               </a>
               <div className="flex flex-col gap-2 mt-3 pt-3 border-t">
+                <LanguageSwitcher />
                 <Link href="/customer/login">
                   <Button variant="outline" className="w-full border-gray-300 text-gray-700 bg-transparent">
                     <User className="h-4 w-4 mr-2" />
-                    เข้าสู่ระบบ
+                    {t("login")}
                   </Button>
                 </Link>
                 <Link href="/customer/signup">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white">สมัครสมาชิก</Button>
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white">{t("signup")}</Button>
                 </Link>
               </div>
             </div>
