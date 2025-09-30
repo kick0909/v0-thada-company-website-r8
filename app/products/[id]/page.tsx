@@ -14,6 +14,8 @@ const products = [
     image: "/canon-office-printer-copier-machine-white-backgrou.jpg",
     rentalPrice: "฿3,500/เดือน",
     priceValue: 3500,
+    sellingPrice: "฿195,000",
+    sellingPriceValue: 195000,
     promotion: {
       discount: 20,
       originalPrice: 4375,
@@ -37,12 +39,14 @@ const products = [
     name: "Ricoh MP C3004",
     brand: "Ricoh",
     type: "Multifunction",
-    image: "/ricoh-color-multifunction-printer.jpg",
-    rentalPrice: "฿5,200/เดือน",
-    priceValue: 5200,
+    image: "/ricoh-mpc3004-color-multifunction.jpg",
+    rentalPrice: "฿2,500/เดือน",
+    priceValue: 2500,
+    sellingPrice: "฿35,000",
+    sellingPriceValue: 35000,
     promotion: {
       discount: 25,
-      originalPrice: 6933,
+      originalPrice: 3125,
       label: "ลด 25%",
     },
     description: {
@@ -130,6 +134,8 @@ const products = [
     image: "/ricoh-im-2701-multifunction.jpg",
     rentalPrice: "฿3,200/เดือน",
     priceValue: 3200,
+    sellingPrice: "฿135,000",
+    sellingPriceValue: 135000,
     description: {
       th: "เครื่องถ่ายเอกสาร Multifunction ขาวดำรุ่นใหม่ล่าสุด พร้อมจอสัมผัส 10.1 นิ้ว และระบบรักษาความปลอดภัยขั้นสูง เหมาะสำหรับสำนักงาน SME ที่ต้องการประสิทธิภาพสูงในราคาที่คุ้มค่า",
       en: "Latest black and white multifunction copier with 10.1-inch touchscreen and advanced security system, ideal for SME offices requiring high performance at great value",
@@ -218,6 +224,8 @@ const products = [
     image: "/ricoh-im-2702-multifunction.jpg",
     rentalPrice: "฿3,500/เดือน",
     priceValue: 3500,
+    sellingPrice: "฿165,000",
+    sellingPriceValue: 165000,
     promotion: {
       discount: 15,
       originalPrice: 4118,
@@ -318,6 +326,8 @@ const products = [
     image: "/ricoh-mpc5503-color-multifunction.jpg",
     rentalPrice: "฿6,800/เดือน",
     priceValue: 6800,
+    sellingPrice: "฿485,000",
+    sellingPriceValue: 485000,
     description: {
       th: "เครื่องถ่ายเอกสารสี Multifunction ระดับเอนเทอร์ไพรส์ ความเร็วสูง 55 หน้าต่อนาที พร้อมเทคโนโลยีล้ำสมัยและระบบรักษาความปลอดภัยขั้นสูง เหมาะสำหรับองค์กรขนาดใหญ่ที่ต้องการประสิทธิภาพสูงสุด",
       en: "Enterprise-level color multifunction copier with high speed of 55 pages per minute, featuring cutting-edge technology and advanced security system, ideal for large organizations requiring maximum performance",
@@ -424,6 +434,8 @@ const products = [
     image: "/ricoh-mpc6004-color-multifunction.jpg",
     rentalPrice: "฿7,500/เดือน",
     priceValue: 7500,
+    sellingPrice: "฿595,000",
+    sellingPriceValue: 595000,
     description: {
       th: "เครื่องถ่ายเอกสารสี Multifunction ระดับเอนเทอร์ไพรส์ ความเร็วสูงสุด 60 หน้าต่อนาที พร้อมเทคโนโลยีล้ำสมัยและระบบรักษาความปลอดภัยขั้นสูง เหมาะสำหรับองค์กรขนาดใหญ่ที่ต้องการประสิทธิภาพสูงสุด",
       en: "Enterprise-level color multifunction copier with maximum speed of 60 pages per minute, featuring cutting-edge technology and advanced security system, ideal for large organizations requiring maximum performance",
@@ -610,6 +622,14 @@ export default function ProductDetailPage() {
                   )}
                 </p>
               )}
+            </div>
+
+            <div className="bg-card border-2 border-primary/30 rounded-xl p-6 mb-6">
+              <p className="text-sm text-muted-foreground mb-2">{t("th", "ราคาขายเครื่อง", "Selling Price")}</p>
+              <p className="text-3xl font-bold text-foreground">{product.sellingPrice}</p>
+              <p className="text-xs text-muted-foreground mt-2">
+                {t("th", "ราคาสำหรับซื้อเครื่องทันที", "Price for immediate purchase")}
+              </p>
             </div>
 
             <p className="text-muted-foreground leading-relaxed mb-6">

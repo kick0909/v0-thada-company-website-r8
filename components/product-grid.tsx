@@ -20,6 +20,8 @@ const products = [
     isHot: true,
     rentalPrice: "฿3,500/เดือน",
     priceValue: 3500,
+    sellingPrice: "฿195,000",
+    sellingPriceValue: 195000,
     promotion: {
       discount: 20,
       originalPrice: 4375,
@@ -37,6 +39,8 @@ const products = [
     isHot: false,
     rentalPrice: "฿4,800/เดือน",
     priceValue: 4800,
+    sellingPrice: "฿285,000",
+    sellingPriceValue: 285000,
   },
   {
     id: 3,
@@ -49,6 +53,8 @@ const products = [
     isHot: false,
     rentalPrice: "฿1,200/เดือน",
     priceValue: 1200,
+    sellingPrice: "฿18,900",
+    sellingPriceValue: 18900,
     promotion: {
       discount: 15,
       originalPrice: 1412,
@@ -66,6 +72,8 @@ const products = [
     isHot: true,
     rentalPrice: "฿4,200/เดือน",
     priceValue: 4200,
+    sellingPrice: "฿245,000",
+    sellingPriceValue: 245000,
   },
   {
     id: 5,
@@ -78,6 +86,8 @@ const products = [
     isHot: false,
     rentalPrice: "฿2,800/เดือน",
     priceValue: 2800,
+    sellingPrice: "฿165,000",
+    sellingPriceValue: 165000,
   },
   {
     id: 6,
@@ -90,18 +100,22 @@ const products = [
     isHot: false,
     rentalPrice: "฿2,500/เดือน",
     priceValue: 2500,
+    sellingPrice: "฿145,000",
+    sellingPriceValue: 145000,
   },
   {
     id: 7,
     name: "Ricoh MP C3004",
     brand: "Ricoh",
     type: "Multifunction",
-    image: "/ricoh-color-multifunction-printer.jpg",
+    image: "/ricoh-mpc3004-color-multifunction.jpg",
     features: ["เช่ารายเดือนเริ่มต้น ฿5,200", "พิมพ์สี 30 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
     rentalPrice: "฿5,200/เดือน",
     priceValue: 5200,
+    sellingPrice: "฿320,000",
+    sellingPriceValue: 320000,
     promotion: {
       discount: 25,
       originalPrice: 6933,
@@ -119,6 +133,8 @@ const products = [
     isHot: false,
     rentalPrice: "฿3,200/เดือน",
     priceValue: 3200,
+    sellingPrice: "฿135,000",
+    sellingPriceValue: 135000,
   },
   {
     id: 9,
@@ -131,6 +147,8 @@ const products = [
     isHot: true,
     rentalPrice: "฿3,500/เดือน",
     priceValue: 3500,
+    sellingPrice: "฿165,000",
+    sellingPriceValue: 165000,
     promotion: {
       discount: 15,
       originalPrice: 4118,
@@ -148,6 +166,8 @@ const products = [
     isHot: true,
     rentalPrice: "฿6,800/เดือน",
     priceValue: 6800,
+    sellingPrice: "฿485,000",
+    sellingPriceValue: 485000,
   },
 ]
 
