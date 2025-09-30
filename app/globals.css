@@ -161,4 +161,27 @@
   p {
     @apply text-pretty leading-relaxed;
   }
+
+  /* Add custom animations for dynamic effects */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+  /* </CHANGE> */
 }
