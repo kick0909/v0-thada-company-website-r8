@@ -137,18 +137,18 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-10">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0 mb-8 md:mb-10">
         <div>
-          <h2 className="font-serif text-4xl font-light text-foreground mb-2">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-foreground mb-2">
             {t("th", "แพ็คเกจเช่าเครื่องถ่ายเอกสาร", "Copier Rental Packages")}
           </h2>
-          <p className="text-muted-foreground font-medium">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium">
             {t("th", "บริการเช่าเครื่องถ่ายเอกสารและเครื่องพิมพ์คุณภาพสูง", "High-quality copier and printer rental services")}
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
           <Select value={sortBy} onValueChange={onSortChange}>
-            <SelectTrigger className="w-[200px] rounded-xl">
+            <SelectTrigger className="w-full sm:w-[200px] rounded-xl">
               <SelectValue placeholder={t("th", "เรียงตาม", "Sort by")} />
             </SelectTrigger>
             <SelectContent>
@@ -160,7 +160,7 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
               <SelectItem value="popular">{t("th", "ยอดนิยม", "Popular")}</SelectItem>
             </SelectContent>
           </Select>
-          <div className="text-sm text-muted-foreground bg-muted px-4 py-2 rounded-xl whitespace-nowrap">
+          <div className="text-xs sm:text-sm text-muted-foreground bg-muted px-3 sm:px-4 py-2 rounded-xl text-center">
             {t(
               "th",
               `แสดง 1-${sortedProducts.length} จาก ${products.length} รายการ`,
@@ -235,21 +235,21 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
       )}
 
       {sortedProducts.length > 0 && (
-        <div className="flex justify-center mt-12">
-          <div className="flex space-x-2 bg-muted p-2 rounded-2xl">
-            <Button variant="ghost" className="rounded-xl px-4 py-2 hover:bg-card">
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <div className="flex flex-wrap justify-center gap-2 bg-muted p-2 rounded-2xl">
+            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
               1
             </Button>
-            <Button variant="ghost" className="rounded-xl px-4 py-2 hover:bg-card">
+            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
               2
             </Button>
-            <Button variant="ghost" className="rounded-xl px-4 py-2 hover:bg-card">
+            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
               3
             </Button>
-            <Button variant="ghost" className="rounded-xl px-4 py-2 hover:bg-card">
+            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
               4
             </Button>
-            <Button variant="ghost" className="rounded-xl px-4 py-2 hover:bg-card">
+            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
               {t("th", "ถัดไป", "Next")}
             </Button>
           </div>
