@@ -76,6 +76,12 @@ const translations = {
     trackRentalsDesc: "จัดการอุปกรณ์ทั้งหมดของคุณจากแดชบอร์ดเดียว",
     support247: "สนับสนุน 24/7",
     support247Desc: "ขอบริการซ่อมบำรุงได้ทุกเมื่อที่คุณต้องการ",
+    // Promotion Section
+    promoTitle: "โปรโมชั่นพิเศษ!",
+    promoDiscount: "ลด 20%",
+    promoDescription: "สำหรับการเช่าครั้งแรก",
+    promoSubtext: "ใช้โค้ด: FIRST20",
+    promoCTA: "เริ่มเช่าเลย",
   },
   en: {
     home: "Home",
@@ -143,6 +149,12 @@ const translations = {
     trackRentalsDesc: "Manage all your equipment from one dashboard",
     support247: "24/7 support",
     support247Desc: "Request maintenance anytime you need it",
+    // Promotion Section
+    promoTitle: "Special Promotion!",
+    promoDiscount: "20% OFF",
+    promoDescription: "On your first rental",
+    promoSubtext: "Use code: FIRST20",
+    promoCTA: "Start Renting",
   },
 }
 
