@@ -46,7 +46,8 @@ export function UserDropdown({ email }: UserDropdownProps) {
   const handleSignOut = async () => {
     const supabase = createClient()
     await supabase.auth.signOut()
-    window.location.href = "/"
+    router.push("/")
+    router.refresh()
   }
 
   return (
