@@ -90,7 +90,7 @@ export default function MaintenancePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6">
               <Phone className="mr-2 h-5 w-5" />
-              โทรขอบริการ 02-123-4567
+              โทรขอบริการ 064-797-9944
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent">
               <Calendar className="mr-2 h-5 w-5" />

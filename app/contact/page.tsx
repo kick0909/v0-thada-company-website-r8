@@ -174,7 +174,7 @@ export default function ContactPage() {
                     </Button>
                     <Button size="lg" variant="outline" className="flex-1 text-lg py-6 bg-transparent">
                       <Phone className="mr-2 h-5 w-5" />
-                      โทรเลย 02-123-4567
+                      โทรเลย 064-797-9944
                     </Button>
                   </div>
                 </form>
@@ -221,7 +221,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="text-center">
               <p className="text-muted-foreground mb-6">หากเครื่องถ่ายเอกสารของคุณเสียและต้องการความช่วยเหลือด่วน</p>
-              <div className="text-3xl font-bold text-primary mb-4">02-123-4567</div>
+              <div className="text-3xl font-bold text-primary mb-4">064-797-9944</div>
               <p className="text-sm text-muted-foreground mb-6">
                 บริการ 24 ชั่วโมง ทุกวัน
                 <br />

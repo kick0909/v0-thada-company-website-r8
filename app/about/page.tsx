@@ -221,9 +221,9 @@ export default function AboutPage() {
               <p className="text-muted-foreground mb-6">
                 กรุงเทพมหานคร ประเทศไทย
                 <br />
-                โทร: 02-123-4567
+                โทร: 064-797-9944
                 <br />
-                อีเมล: info@thada.com
+                อีเมล: thadacopy@gmail.com
               </p>
               <p className="text-sm text-muted-foreground">
                 เปิดบริการ: จันทร์-ศุกร์ 8:00-17:00 น.

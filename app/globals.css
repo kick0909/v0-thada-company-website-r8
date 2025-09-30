@@ -1,36 +1,39 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Load Inter from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
   /* Updated to pure white background with red and white theme */
   --background: oklch(1 0 0); /* Pure white background */
   --foreground: oklch(0.15 0 0); /* Deep charcoal text */
-  --card: oklch(1 0 0); /* Pure white cards */
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
   --primary: oklch(0.55 0.22 25); /* Rich red primary */
-  --primary-foreground: oklch(1 0 0); /* White text on red */
-  --secondary: oklch(0.98 0 0); /* Very light gray for subtle contrast */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.98 0 0);
   --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.96 0 0); /* Light gray for muted elements */
+  --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.65 0.18 25); /* Lighter red accent */
+  --accent: oklch(0.65 0.18 25);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.25 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0 0); /* Light gray borders */
-  --input: oklch(0.98 0 0); /* Very light gray for inputs */
-  --ring: oklch(0.55 0.22 25); /* Red focus rings */
-  --chart-1: oklch(0.55 0.22 25); /* Red chart colors */
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.98 0 0);
+  --ring: oklch(0.55 0.22 25);
+  --chart-1: oklch(0.55 0.22 25);
   --chart-2: oklch(0.65 0.18 25);
   --chart-3: oklch(0.75 0.15 25);
   --chart-4: oklch(0.85 0.1 25);
   --chart-5: oklch(0.45 0.25 25);
   --radius: 0.75rem;
-  --sidebar: oklch(1 0 0); /* White sidebar */
+  --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: oklch(0.55 0.22 25);
   --sidebar-primary-foreground: oklch(1 0 0);
@@ -41,14 +44,13 @@
 }
 
 .dark {
-  /* Updated dark mode to maintain red and white theme */
   --background: oklch(0.1 0 0);
   --foreground: oklch(0.95 0 0);
   --card: oklch(0.15 0 0);
   --card-foreground: oklch(0.95 0 0);
   --popover: oklch(0.1 0 0);
   --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.65 0.18 25); /* Lighter red for dark mode */
+  --primary: oklch(0.65 0.18 25);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.2 0 0);
   --secondary-foreground: oklch(0.95 0 0);
@@ -77,11 +79,10 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-roboto); /* Roboto is now default */
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-roboto); /* headings also Roboto */
-  /* Added serif font for elegant headings */
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Inter", monospace; 
+  --font-serif: "Inter", sans-serif; /* force headings to Inter */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -125,12 +126,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    /* Enhanced typography with better line height */
+    @apply bg-background text-foreground font-sans;
     line-height: 1.6;
   }
 
-  /* Enhanced typography hierarchy */
   h1,
   h2,
   h3,

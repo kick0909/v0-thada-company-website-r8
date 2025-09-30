@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
 
 const achievements = [
-  "Over 500 successful projects delivered",
-  "15+ years of industry experience",
-  "Award-winning customer service",
-  "Global presence across 25+ countries",
+  "ดูแลและส่งมอบงานให้ลูกค้ากว่า 500 โครงการแล้ว",
+  "มีประสบการณ์ทำงานมากกว่า 15 ปี",
+  "การันตีด้วยรางวัลด้านการบริการลูกค้า",
+  "ลูกค้าทั่วโลกในกว่า 25 ประเทศไว้วางใจเรา",
 ]
 
 export function AboutSection() {
@@ -15,12 +15,13 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance">
-              Combining innovation, reliability, and excellence
+              สร้างสรรค์นวัตกรรม มั่นใจได้ในคุณภาพ และบริการที่จริงใจ
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
-              Thada stands at the forefront of business transformation, delivering innovative solutions that drive
-              sustainable growth and operational excellence for organizations worldwide.
+              Thada พร้อมเคียงข้างธุรกิจของคุณ
+              ด้วยโซลูชันที่ช่วยให้การทำงานง่ายขึ้น เติบโตได้อย่างยั่งยืน
+              และสร้างผลลัพธ์ที่ดีที่สุดให้กับองค์กรของคุณ
             </p>
 
             <div className="space-y-4 mb-8">
@@ -33,7 +34,7 @@ export function AboutSection() {
             </div>
 
             <Button size="lg" className="text-lg px-8 py-6">
-              Learn More About Us
+              รู้จักเราให้มากขึ้น
             </Button>
           </div>
 
@@ -42,7 +43,7 @@ export function AboutSection() {
               <div className="w-3/4 h-3/4 bg-background rounded-xl shadow-2xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-primary mb-4">15+</div>
-                  <div className="text-xl text-muted-foreground">Years of Excellence</div>
+                  <div className="text-xl text-muted-foreground">ปีแห่งความไว้วางใจ</div>
                 </div>
               </div>
             </div>

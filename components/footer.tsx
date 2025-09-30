@@ -4,16 +4,16 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div className="text-3xl font-bold mb-4 text-primary-foreground">Thada</div>
+            <div className="text-3xl font-bold mb-4 text-primary-foreground">Thada Copy and Supply Ltd, Part.</div>
             <p className="text-background/80 mb-6 max-w-md leading-relaxed">
-              Your trusted partner for innovative business solutions and digital transformation.
+              หจก. ธาดาก็อปปี้ แอนด์ ซัพพลาย
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-background/60 hover:text-background transition-colors">
-                LinkedIn
+                Line
               </a>
               <a href="#" className="text-background/60 hover:text-background transition-colors">
-                Twitter
+                Instagram
               </a>
               <a href="#" className="text-background/60 hover:text-background transition-colors">
                 Facebook
