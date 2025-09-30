@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { LanguageSwitcher } from "@/components/language-switcher"
 
@@ -20,12 +20,14 @@ export default function LoginPage() {
   const router = useRouter()
   const { t } = useLanguage()
 
-  useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    if (params.get("error") === "unauthorized_email") {
-      setError("Access denied. Only thadacopy@gmail.com can access the admin dashboard.")
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search)
+      if (params.get("error") === "unauthorized_email") {
+        setError("Access denied. Only thadacopy@gmail.com can access the admin dashboard.")
+      }
     }
-  })
+  }, [])
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,7 +46,7 @@ export default function LoginPage() {
       })
       if (error) throw error
 
-      window.location.href = "/admin"
+      router.push("/admin")
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred")
       setIsLoading(false)
