@@ -1,9 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react"
+import { Menu, X, Phone, Mail, MapPin, User } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,9 +61,15 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium">
-              ขอใบเสนอราคา
-            </Button>
+            <Link href="/customer/login">
+              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent">
+                <User className="h-4 w-4 mr-2" />
+                เข้าสู่ระบบ
+              </Button>
+            </Link>
+            <Link href="/customer/signup">
+              <Button className="bg-red-600 hover:bg-red-700 text-white">สมัครสมาชิก</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,7 +96,17 @@ export function Header() {
               <a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium py-2">
                 ติดต่อ
               </a>
-              <Button className="bg-red-600 hover:bg-red-700 text-white mt-3 rounded-lg">ขอใบเสนอราคา</Button>
+              <div className="flex flex-col gap-2 mt-3 pt-3 border-t">
+                <Link href="/customer/login">
+                  <Button variant="outline" className="w-full border-gray-300 text-gray-700 bg-transparent">
+                    <User className="h-4 w-4 mr-2" />
+                    เข้าสู่ระบบ
+                  </Button>
+                </Link>
+                <Link href="/customer/signup">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white">สมัครสมาชิก</Button>
+                </Link>
+              </div>
             </div>
           </nav>
         )}
