@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Eye, Heart } from "lucide-react"
+import { Eye, Heart, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import type { FilterState } from "./product-filters"
 
@@ -89,6 +90,8 @@ interface ProductGridProps {
 
 export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps) {
   const { t } = useLanguage()
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
 
   const safeFilters = filters || { brands: [], types: [], priceRanges: [] }
 
@@ -135,6 +138,21 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
     }
   })
 
+  const totalPages = Math.ceil(sortedProducts.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentProducts = sortedProducts.slice(startIndex, endIndex)
+
+  const handleSortChange = (value: string) => {
+    setCurrentPage(1)
+    onSortChange(value)
+  }
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0 mb-8 md:mb-10">
@@ -147,7 +165,7 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-          <Select value={sortBy} onValueChange={onSortChange}>
+          <Select value={sortBy} onValueChange={handleSortChange}>
             <SelectTrigger className="w-full sm:w-[200px] rounded-xl">
               <SelectValue placeholder={t("th", "เรียงตาม", "Sort by")} />
             </SelectTrigger>
@@ -163,8 +181,8 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
           <div className="text-xs sm:text-sm text-muted-foreground bg-muted px-3 sm:px-4 py-2 rounded-xl text-center">
             {t(
               "th",
-              `แสดง 1-${sortedProducts.length} จาก ${products.length} รายการ`,
-              `Showing 1-${sortedProducts.length} of ${products.length} items`,
+              `แสดง ${startIndex + 1}-${Math.min(endIndex, sortedProducts.length)} จาก ${sortedProducts.length} รายการ`,
+              `Showing ${startIndex + 1}-${Math.min(endIndex, sortedProducts.length)} of ${sortedProducts.length} items`,
             )}
           </div>
         </div>
@@ -178,7 +196,7 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedProducts.map((product) => (
+          {currentProducts.map((product) => (
             <div
               key={product.id}
               className="bg-card rounded-2xl shadow-lg border border-border hover:shadow-2xl transition-all duration-300 group overflow-hidden"
@@ -234,23 +252,40 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
         </div>
       )}
 
-      {sortedProducts.length > 0 && (
+      {sortedProducts.length > 0 && totalPages > 1 && (
         <div className="flex justify-center mt-8 sm:mt-12">
-          <div className="flex flex-wrap justify-center gap-2 bg-muted p-2 rounded-2xl">
-            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
-              1
+          <div className="flex flex-wrap justify-center items-center gap-2 bg-muted p-2 rounded-2xl">
+            <Button
+              variant="ghost"
+              className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base disabled:opacity-50"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              {t("th", "ก่อนหน้า", "Previous")}
             </Button>
-            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
-              2
-            </Button>
-            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
-              3
-            </Button>
-            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
-              4
-            </Button>
-            <Button variant="ghost" className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base">
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={currentPage === page ? "default" : "ghost"}
+                className={`rounded-xl px-3 sm:px-4 py-2 text-sm sm:text-base ${
+                  currentPage === page ? "bg-primary text-primary-foreground hover:bg-primary/90" : "hover:bg-card"
+                }`}
+                onClick={() => handlePageChange(page)}
+              >
+                {page}
+              </Button>
+            ))}
+
+            <Button
+              variant="ghost"
+              className="rounded-xl px-3 sm:px-4 py-2 hover:bg-card text-sm sm:text-base disabled:opacity-50"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
               {t("th", "ถัดไป", "Next")}
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
         </div>

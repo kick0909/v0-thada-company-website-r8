@@ -1,6 +1,11 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/lib/language-context"
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative bg-card overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
@@ -10,24 +15,28 @@ export function HeroSection() {
           <div className="relative z-10 flex flex-col md:flex-row items-center min-h-[400px] md:min-h-[500px]">
             <div className="w-full md:w-1/2 text-primary-foreground px-6 sm:px-8 md:pr-12 md:pl-12 py-8 md:py-0">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light mb-4 md:mb-6 leading-tight tracking-tight">
-                เช่าเครื่องถ่ายเอกสาร
+                {t("th", "เช่าเครื่องถ่ายเอกสาร", "Copier Rental")}
                 <br />
-                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light">คุณภาพระดับมืออาชีพ</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light">
+                  {t("th", "คุณภาพระดับมืออาชีพ", "Professional Quality")}
+                </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-primary-foreground/90 leading-relaxed font-light">
-                บริการเช่าเครื่องถ่ายเอกสาร เครื่องพิมพ์ และอุปกรณ์สำนักงาน
-                <br className="hidden sm:block" />
-                พร้อมบริการบำรุงรักษาครบวงจร
+                {t(
+                  "th",
+                  "บริการเช่าเครื่องถ่ายเอกสาร เครื่องพิมพ์ และอุปกรณ์สำนักงาน พร้อมบริการบำรุงรักษาครบวงจร",
+                  "Copier, printer, and office equipment rental services with comprehensive maintenance support",
+                )}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button className="bg-card text-primary hover:bg-card/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  ดูแพ็คเกจเช่า
+                  {t("th", "ดูแพ็คเกจเช่า", "View Rental Packages")}
                 </Button>
                 <Button
                   variant="outline"
                   className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-xl transition-all duration-300 bg-transparent w-full sm:w-auto"
                 >
-                  ปรึกษาฟรี
+                  {t("th", "ปรึกษาฟรี", "Free Consultation")}
                 </Button>
               </div>
             </div>
