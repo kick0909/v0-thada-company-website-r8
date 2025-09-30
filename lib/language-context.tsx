@@ -8,6 +8,7 @@ interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
   t: (key: string, thaiText?: string, englishText?: string) => string
+  mounted: boolean
 }
 
 const translations = {
@@ -148,9 +149,11 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false)
   const [language, setLanguageState] = useState<Language>("en")
 
   useEffect(() => {
+    setMounted(true)
     const saved = localStorage.getItem("language") as Language
     if (saved && (saved === "th" || saved === "en")) {
       setLanguageState(saved)
@@ -169,7 +172,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return translations[language][key as keyof typeof translations.th] || key
   }
 
-  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+  return <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {
