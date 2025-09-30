@@ -11,6 +11,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Building2, ArrowLeft, CheckCircle2 } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export default function CustomerSignUpPage() {
   const [formData, setFormData] = useState({
@@ -23,6 +25,7 @@ export default function CustomerSignUpPage() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -72,6 +75,10 @@ export default function CustomerSignUpPage() {
 
   return (
     <div className="flex min-h-screen w-full">
+      <div className="absolute top-6 right-6 z-10">
+        <LanguageSwitcher />
+      </div>
+
       {/* Left side - Branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-primary p-12 flex-col justify-between text-primary-foreground">
         <div>
@@ -80,7 +87,7 @@ export default function CustomerSignUpPage() {
             className="inline-flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-sm font-medium">Back to home</span>
+            <span className="text-sm font-medium">{t("backToHome")}</span>
           </Link>
         </div>
 
@@ -89,34 +96,34 @@ export default function CustomerSignUpPage() {
             <Building2 className="h-10 w-10" />
             <span className="text-3xl font-bold">THADA</span>
           </div>
-          <h1 className="text-4xl font-bold leading-tight">Start renting professional office equipment today</h1>
+          <h1 className="text-4xl font-bold leading-tight">{t("startRenting")}</h1>
 
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="h-6 w-6 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold">Easy online ordering</p>
-                <p className="text-sm text-primary-foreground/80">Browse and rent equipment in minutes</p>
+                <p className="font-semibold">{t("easyOrdering")}</p>
+                <p className="text-sm text-primary-foreground/80">{t("easyOrderingDesc")}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="h-6 w-6 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold">Track your rentals</p>
-                <p className="text-sm text-primary-foreground/80">Manage all your equipment from one dashboard</p>
+                <p className="font-semibold">{t("trackRentals")}</p>
+                <p className="text-sm text-primary-foreground/80">{t("trackRentalsDesc")}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="h-6 w-6 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold">24/7 support</p>
-                <p className="text-sm text-primary-foreground/80">Request maintenance anytime you need it</p>
+                <p className="font-semibold">{t("support247")}</p>
+                <p className="text-sm text-primary-foreground/80">{t("support247Desc")}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="text-sm text-primary-foreground/70">© 2025 THADA. Professional office equipment solutions.</div>
+        <div className="text-sm text-primary-foreground/70">{t("copyrightText")}</div>
       </div>
 
       {/* Right side - Signup form */}
@@ -128,21 +135,21 @@ export default function CustomerSignUpPage() {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span className="text-sm font-medium">Back to home</span>
+              <span className="text-sm font-medium">{t("backToHome")}</span>
             </Link>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-2 text-center lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tight">Create your account</h2>
-              <p className="text-muted-foreground">Get started with THADA equipment rentals</p>
+              <h2 className="text-3xl font-bold tracking-tight">{t("customerSignupTitle")}</h2>
+              <p className="text-muted-foreground">{t("customerSignupDescription")}</p>
             </div>
 
             <Card className="border-2">
               <CardContent className="pt-6">
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="companyName">Company name</Label>
+                    <Label htmlFor="companyName">{t("companyName")}</Label>
                     <Input
                       id="companyName"
                       type="text"
@@ -155,7 +162,7 @@ export default function CustomerSignUpPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Work email</Label>
+                    <Label htmlFor="email">{t("workEmail")}</Label>
                     <Input
                       id="email"
                       type="email"
@@ -168,11 +175,11 @@ export default function CustomerSignUpPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">{t("password")}</Label>
                     <Input
                       id="password"
                       type="password"
-                      placeholder="At least 8 characters"
+                      placeholder={t("passwordPlaceholder")}
                       required
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -181,11 +188,11 @@ export default function CustomerSignUpPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="confirmPassword">Confirm password</Label>
+                    <Label htmlFor="confirmPassword">{t("confirmPassword")}</Label>
                     <Input
                       id="confirmPassword"
                       type="password"
-                      placeholder="Re-enter your password"
+                      placeholder={t("confirmPasswordPlaceholder")}
                       required
                       value={formData.confirmPassword}
                       onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
@@ -200,13 +207,13 @@ export default function CustomerSignUpPage() {
                       onCheckedChange={(checked) => setFormData({ ...formData, agreeToTerms: checked as boolean })}
                     />
                     <label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                      I agree to the{" "}
+                      {t("agreeToTerms")}{" "}
                       <Link href="/terms" className="text-primary hover:underline">
-                        Terms of Service
+                        {t("termsOfService")}
                       </Link>{" "}
-                      and{" "}
+                      {t("and")}{" "}
                       <Link href="/privacy" className="text-primary hover:underline">
-                        Privacy Policy
+                        {t("privacyPolicy")}
                       </Link>
                     </label>
                   </div>
@@ -218,16 +225,16 @@ export default function CustomerSignUpPage() {
                   )}
 
                   <Button type="submit" className="w-full h-11" disabled={isLoading}>
-                    {isLoading ? "Creating account..." : "Create account"}
+                    {isLoading ? t("creatingAccount") : t("createAccountButton")}
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
             <div className="text-center text-sm">
-              <span className="text-muted-foreground">Already have an account? </span>
+              <span className="text-muted-foreground">{t("alreadyHaveAccount")} </span>
               <Link href="/customer/login" className="text-primary hover:underline font-medium">
-                Sign in
+                {t("signInLink")}
               </Link>
             </div>
           </div>

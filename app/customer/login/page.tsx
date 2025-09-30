@@ -10,6 +10,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Building2, ArrowLeft } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export default function CustomerLoginPage() {
   const [email, setEmail] = useState("")
@@ -17,6 +19,7 @@ export default function CustomerLoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -41,6 +44,10 @@ export default function CustomerLoginPage() {
 
   return (
     <div className="flex min-h-screen w-full">
+      <div className="absolute top-6 right-6 z-10">
+        <LanguageSwitcher />
+      </div>
+
       {/* Left side - Branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-primary p-12 flex-col justify-between text-primary-foreground">
         <div>
@@ -49,7 +56,7 @@ export default function CustomerLoginPage() {
             className="inline-flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-sm font-medium">Back to home</span>
+            <span className="text-sm font-medium">{t("backToHome")}</span>
           </Link>
         </div>
 
@@ -58,13 +65,11 @@ export default function CustomerLoginPage() {
             <Building2 className="h-10 w-10" />
             <span className="text-3xl font-bold">THADA</span>
           </div>
-          <h1 className="text-4xl font-bold leading-tight">Welcome back to your equipment rental portal</h1>
-          <p className="text-lg text-primary-foreground/90 leading-relaxed">
-            Access your account to manage rentals, track orders, and request maintenance for your office equipment.
-          </p>
+          <h1 className="text-4xl font-bold leading-tight">{t("welcomeBack")}</h1>
+          <p className="text-lg text-primary-foreground/90 leading-relaxed">{t("welcomeBackDescription")}</p>
         </div>
 
-        <div className="text-sm text-primary-foreground/70">© 2025 THADA. Professional office equipment solutions.</div>
+        <div className="text-sm text-primary-foreground/70">{t("copyrightText")}</div>
       </div>
 
       {/* Right side - Login form */}
@@ -76,21 +81,21 @@ export default function CustomerLoginPage() {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span className="text-sm font-medium">Back to home</span>
+              <span className="text-sm font-medium">{t("backToHome")}</span>
             </Link>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-2 text-center lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tight">Sign in to your account</h2>
-              <p className="text-muted-foreground">Enter your credentials to access your customer portal</p>
+              <h2 className="text-3xl font-bold tracking-tight">{t("customerLoginTitle")}</h2>
+              <p className="text-muted-foreground">{t("customerLoginDescription")}</p>
             </div>
 
             <Card className="border-2">
               <CardContent className="pt-6">
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email address</Label>
+                    <Label htmlFor="email">{t("emailAddress")}</Label>
                     <Input
                       id="email"
                       type="email"
@@ -104,9 +109,9 @@ export default function CustomerLoginPage() {
 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="password">Password</Label>
+                      <Label htmlFor="password">{t("password")}</Label>
                       <Link href="#" className="text-sm text-primary hover:underline">
-                        Forgot password?
+                        {t("forgotPassword")}
                       </Link>
                     </div>
                     <Input
@@ -126,16 +131,16 @@ export default function CustomerLoginPage() {
                   )}
 
                   <Button type="submit" className="w-full h-11" disabled={isLoading}>
-                    {isLoading ? "Signing in..." : "Sign in"}
+                    {isLoading ? t("signingIn") : t("signInButton")}
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
             <div className="text-center text-sm">
-              <span className="text-muted-foreground">Don't have an account? </span>
+              <span className="text-muted-foreground">{t("noAccountQuestion")} </span>
               <Link href="/customer/signup" className="text-primary hover:underline font-medium">
-                Create account
+                {t("createAccount")}
               </Link>
             </div>
           </div>

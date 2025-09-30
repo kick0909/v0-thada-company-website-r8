@@ -10,6 +10,8 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { useLanguage } from "@/lib/language-context"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -17,6 +19,7 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -41,18 +44,22 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
+      <div className="absolute top-6 right-6">
+        <LanguageSwitcher />
+      </div>
+
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-2xl">Login to THADA</CardTitle>
-              <CardDescription>Enter your email and password to access your account</CardDescription>
+              <CardTitle className="text-2xl">{t("adminLoginTitle")}</CardTitle>
+              <CardDescription>{t("adminLoginDescription")}</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleLogin}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">{t("email")}</Label>
                     <Input
                       id="email"
                       type="email"
@@ -64,7 +71,7 @@ export default function LoginPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">{t("password")}</Label>
                     <Input
                       id="password"
                       type="password"
@@ -78,13 +85,13 @@ export default function LoginPage() {
                     <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600 border-2 border-red-200">{error}</div>
                   )}
                   <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Logging in..." : "Login"}
+                    {isLoading ? t("loggingIn") : t("loginButton")}
                   </Button>
                 </div>
                 <div className="mt-4 text-center text-sm">
-                  Don&apos;t have an account?{" "}
+                  {t("noAccount")}{" "}
                   <Link href="/auth/sign-up" className="text-primary hover:underline underline-offset-4 font-medium">
-                    Sign up
+                    {t("signupLink")}
                   </Link>
                 </div>
               </form>

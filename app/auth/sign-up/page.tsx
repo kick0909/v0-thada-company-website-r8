@@ -10,6 +10,8 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { useLanguage } from "@/lib/language-context"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("")
@@ -18,6 +20,7 @@ export default function SignUpPage() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -56,18 +59,22 @@ export default function SignUpPage() {
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
+      <div className="absolute top-6 right-6">
+        <LanguageSwitcher />
+      </div>
+
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-2xl">Create Account</CardTitle>
-              <CardDescription>Sign up for a THADA admin account</CardDescription>
+              <CardTitle className="text-2xl">{t("adminSignupTitle")}</CardTitle>
+              <CardDescription>{t("adminSignupDescription")}</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSignUp}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">{t("email")}</Label>
                     <Input
                       id="email"
                       type="email"
@@ -79,7 +86,7 @@ export default function SignUpPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">{t("password")}</Label>
                     <Input
                       id="password"
                       type="password"
@@ -90,7 +97,7 @@ export default function SignUpPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="repeat-password">Repeat Password</Label>
+                    <Label htmlFor="repeat-password">{t("repeatPassword")}</Label>
                     <Input
                       id="repeat-password"
                       type="password"
@@ -104,13 +111,13 @@ export default function SignUpPage() {
                     <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600 border-2 border-red-200">{error}</div>
                   )}
                   <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Creating account..." : "Sign up"}
+                    {isLoading ? t("creatingAccount") : t("signupButton")}
                   </Button>
                 </div>
                 <div className="mt-4 text-center text-sm">
-                  Already have an account?{" "}
+                  {t("haveAccount")}{" "}
                   <Link href="/auth/login" className="text-primary hover:underline underline-offset-4 font-medium">
-                    Login
+                    {t("loginLink")}
                   </Link>
                 </div>
               </form>
