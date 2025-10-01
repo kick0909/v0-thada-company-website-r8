@@ -89,12 +89,14 @@ export default function CustomerSignUpPage() {
           .from("customers")
           .select("*")
           .eq("id", authData.user.id)
-          .single()
+          .maybeSingle()
 
         if (customerError) {
           console.error("[v0] Customer record check error:", customerError)
-        } else {
+        } else if (customerData) {
           console.log("[v0] Customer record created:", customerData)
+        } else {
+          console.log("[v0] Customer record not yet created, will be created by trigger")
         }
 
         router.push("/customer/signup-success")

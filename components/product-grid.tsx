@@ -11,10 +11,10 @@ import Link from "next/link"
 const products = [
   {
     id: 1,
-    name: "Canon imageRUNNER 2630i",
+    name: "Canon C5535",
     brand: "Canon",
     type: "Multifunction",
-    image: "/canon-office-printer-copier-machine-white-backgrou.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NvxaHKgSAYv74IDYsjZ89auoVUqpUG.png",
     features: ["เช่ารายเดือนเริ่มต้น ฿3,500", "ความเร็ว 30 หน้าต่อนาที", "พิมพ์ 2 หน้าอัตโนมัติ", "รวมบริการบำรุงรักษา"],
     isNew: false,
     isHot: true,
@@ -30,10 +30,10 @@ const products = [
   },
   {
     id: 2,
-    name: "Canon imageRUNNER 2645i",
+    name: "Canon ADVC3520",
     brand: "Canon",
     type: "Multifunction",
-    image: "/canon-large-office-multifunction-printer-white.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y97Slbi9CWzCv3MJTRJsO36p0jZWXB.png",
     features: ["เช่ารายเดือนเริ่มต้น ฿4,800", "ความเร็ว 45 หน้าต่อนาที", "Multifunction ครบครัน", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: false,
@@ -44,10 +44,10 @@ const products = [
   },
   {
     id: 3,
-    name: "Canon PIXMA G6470",
+    name: "Canon ADV DX C3720",
     brand: "Canon",
     type: "เครื่องพิมพ์",
-    image: "/canon-inkjet-printer-compact-white-background.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HJ6ab0BgaOBYir6F0yEGSnM8abhaSf.png",
     features: ["เช่ารายเดือนเริ่มต้น ฿1,200", "เครื่องพิมพ์สี Inkjet", "ประหยัดค่าหมึก", "เหมาะสำหรับงานกราฟิก"],
     isNew: false,
     isHot: false,
@@ -63,45 +63,45 @@ const products = [
   },
   {
     id: 4,
-    name: "Canon imageRUNNER 2545i",
-    brand: "Canon",
-    type: "เครื่องถ่ายเอกสาร",
-    image: "/canon-office-copier-machine-medium-size-white.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿4,200", "ความเร็ว 45 หน้าต่อนาที", "เชื่อมต่อ Wi-Fi", "รวมบริการบำรุงรักษา"],
-    isNew: false,
+    name: "Xerox AltaLink B8155",
+    brand: "Xerox",
+    type: "Multifunction",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VsXTskxMpXJW3YyNH9244U9cRsD5jA.png",
+    features: ["เช่ารายเดือนเริ่มต้น ฿7,500", "ความเร็ว 55 หน้าต่อนาที", "ขาวดำความละเอียดสูง", "รวมบริการบำรุงรักษา"],
+    isNew: true,
     isHot: true,
-    rentalPrice: "฿4,200/เดือน",
-    priceValue: 4200,
-    sellingPrice: "฿245,000",
-    sellingPriceValue: 245000,
+    rentalPrice: "฿7,500/เดือน",
+    priceValue: 7500,
+    sellingPrice: "฿520,000",
+    sellingPriceValue: 520000,
   },
   {
     id: 5,
-    name: "Xerox DocuCentre S2320",
+    name: "Xerox AltaLink C8170",
     brand: "Xerox",
     type: "Multifunction",
-    image: "/xerox-office-multifunction-printer-white-backgroun.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿2,800", "ความเร็ว 20 หน้าต่อนาที", "ประหยัดพลังงาน", "รวมบริการบำรุงรักษา"],
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7H0WNiTrhc6WGOLLvV8VBgmhTMyO3u.png",
+    features: ["เช่ารายเดือนเริ่มต้น ฿9,800", "พิมพ์สี 70 หน้าต่อนาที", "จอสัมผัสขนาดใหญ่", "รวมบริการบำรุงรักษา"],
     isNew: true,
-    isHot: false,
-    rentalPrice: "฿2,800/เดือน",
-    priceValue: 2800,
-    sellingPrice: "฿165,000",
-    sellingPriceValue: 165000,
+    isHot: true,
+    rentalPrice: "฿9,800/เดือน",
+    priceValue: 9800,
+    sellingPrice: "฿750,000",
+    sellingPriceValue: 750000,
   },
   {
     id: 6,
-    name: "Sharp BP 20M31",
-    brand: "Sharp",
-    type: "เครื่องถ่ายเอกสาร",
-    image: "/sharp-office-printer-copier-black-and-white.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿2,500", "ความเร็ว 31 หน้าต่อนาที", "เหมาะสำหรับ SME", "รวมบริการบำรุงรักษา"],
-    isNew: false,
+    name: "Xerox AltaLink C8155",
+    brand: "Xerox",
+    type: "Multifunction",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jOX2oA0Ist08K1K887m81p9kYethSd.png",
+    features: ["เช่ารายเดือนเริ่มต้น ฿8,500", "พิมพ์สี 55 หน้าต่อนาที", "เทคโนโลยีล้ำสมัย", "รวมบริการบำรุงรักษา"],
+    isNew: true,
     isHot: false,
-    rentalPrice: "฿2,500/เดือน",
-    priceValue: 2500,
-    sellingPrice: "฿145,000",
-    sellingPriceValue: 145000,
+    rentalPrice: "฿8,500/เดือน",
+    priceValue: 8500,
+    sellingPrice: "฿650,000",
+    sellingPriceValue: 650000,
   },
   {
     id: 7,
@@ -279,12 +279,12 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
 
                 <div className="relative p-6 pt-12">
                   {product.isNew && (
-                    <span className="absolute top-14 left-4 bg-accent text-accent-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    <span className="absolute top-14 left-4 bg-accent text-accent-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
                       {t("th", "ใหม่", "New")}
                     </span>
                   )}
                   {product.isHot && (
-                    <span className="absolute top-14 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    <span className="absolute top-14 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
                       {t("th", "ยอดนิยม", "Popular")}
                     </span>
                   )}
@@ -384,12 +384,12 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
               >
                 <div className="relative p-6">
                   {product.isNew && (
-                    <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
                       {t("th", "ใหม่", "New")}
                     </span>
                   )}
                   {product.isHot && (
-                    <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
                       {t("th", "ยอดนิยม", "Popular")}
                     </span>
                   )}

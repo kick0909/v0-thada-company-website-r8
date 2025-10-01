@@ -38,7 +38,7 @@ export function ContactSidebar() {
           </div>
           <div>
             <p className="text-sm text-foreground font-medium">{t("th", "ที่ตั้ง", "Location")}</p>
-            <p className="text-sm text-muted-foreground">{t("th", "กรุงเทพฯ 10250", "Bangkok 10250")}</p>
+            <p className="text-sm text-muted-foreground">{t("th", "760/95 พัฒนาการ 38", "Bangkok 10250")}</p>
           </div>
         </div>
 

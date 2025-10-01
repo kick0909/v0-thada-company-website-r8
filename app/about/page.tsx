@@ -7,7 +7,7 @@ import { CheckCircle, Users, Award, Clock, MapPin } from "lucide-react"
 
 const achievements = [
   {
-    number: "15+",
+    number: "20+",
     label: "ปีของประสบการณ์",
     description: "ในธุรกิจเช่าและบำรุงรักษาเครื่องถ่ายเอกสาร",
   },
@@ -32,7 +32,7 @@ const values = [
   {
     icon: CheckCircle,
     title: "ความน่าเชื่อถือ",
-    description: "เราให้คำมั่นสัญญาและปฏิบัติตามอย่างเคร่งครัด ด้วยประสบการณ์กว่า 15 ปี",
+    description: "เราให้คำมั่นสัญญาและปฏิบัติตามอย่างเคร่งครัด ด้วยประสบการณ์กว่า 20 ปี",
   },
   {
     icon: Users,
@@ -53,7 +53,7 @@ const values = [
 
 const timeline = [
   {
-    year: "2008",
+    year: "2001",
     title: "ก่อตั้งบริษัท",
     description: "เริ่มต้นธุรกิจด้วยการให้บริการซ่อมเครื่องถ่ายเอกสาร",
   },
@@ -63,19 +63,14 @@ const timeline = [
     description: "เพิ่มบริการเช่าเครื่องถ่ายเอกสารระยะยาว",
   },
   {
-    year: "2016",
-    title: "พันธมิตรอย่างเป็นทางการ",
-    description: "เป็นพันธมิตรอย่างเป็นทางการกับ Canon และ Xerox",
-  },
-  {
     year: "2020",
-    title: "บริการดิจิทัล",
-    description: "เพิ่มบริการจัดการเอกสารดิจิทัลและระบบคลาวด์",
+    title: "ขยายทีม",
+    description: "ขยายทีมช่างและพื้นที่บริการครอบคลุมทั่วกรุงเทพฯ",
   },
   {
     year: "2024",
-    title: "ขยายทีม",
-    description: "ขยายทีมช่างและพื้นที่บริการครอบคลุมทั่วกรุงเทพฯ",
+    title: "บริการดิจิทัล",
+    description: "เริ่มเปิดบริการดิจิทัล",
   },
 ]
 
@@ -96,7 +91,7 @@ export default function AboutPage() {
                 เกี่ยวกับ THADA
               </h1>
               <p className="text-xl text-white/90 mb-8 text-pretty drop-shadow">
-                ผู้นำด้านบริการเช่าและบำรุงรักษาเครื่องถ่ายเอกสารในประเทศไทย ด้วยประสบการณ์กว่า 15 ปี และความมุ่งมั่นในการให้บริการที่เป็นเลิศ
+                ผู้นำด้านบริการเช่าและบำรุงรักษาเครื่องถ่ายเอกสารในประเทศไทย ด้วยประสบการณ์กว่า 20 ปี และความมุ่งมั่นในการให้บริการที่เป็นเลิศ
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6 bg-white text-primary hover:bg-white/90">
@@ -114,7 +109,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-[#C94444]/30 to-orange-500/30 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-2xl">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-white mb-4 drop-shadow-lg">15+</div>
+                  <div className="text-6xl font-bold text-white mb-4 drop-shadow-lg">20+</div>
                   <div className="text-xl text-white/90 drop-shadow">ปีของประสบการณ์</div>
                 </div>
               </div>
@@ -173,7 +168,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">เส้นทางการเติบโต</h2>
-            <p className="text-lg text-muted-foreground">ประวัติการพัฒนาและเติบโตของเราตลอด 15 ปี</p>
+            <p className="text-lg text-muted-foreground">ประวัติการพัฒนาและเติบโตของเราตลอด 20 ปี</p>
           </div>
 
           <div className="max-w-4xl mx-auto">

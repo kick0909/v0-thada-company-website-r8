@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react"
 
 const achievements = [
   "ดูแลและส่งมอบงานให้ลูกค้ากว่า 500 โครงการแล้ว",
-  "มีประสบการณ์ทำงานมากกว่า 15 ปี",
+  "มีประสบการณ์ทำงานมากกว่า 20 ปี",
   "การันตีด้วยรางวัลด้านการบริการลูกค้า",
   "ลูกค้าทั่วโลกในกว่า 25 ประเทศไว้วางใจเรา",
 ]
@@ -42,7 +42,7 @@ export function AboutSection() {
             <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
               <div className="w-3/4 h-3/4 bg-background rounded-xl shadow-2xl flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-primary mb-4">15+</div>
+                  <div className="text-6xl font-bold text-primary mb-4">20+</div>
                   <div className="text-xl text-muted-foreground">ปีแห่งความไว้วางใจ</div>
                 </div>
               </div>
