@@ -1068,44 +1068,22 @@ export default function ProductDetailPage() {
               </Button>
             </div>
 
-            {product.promotion && (
-              <div className="bg-gradient-to-r from-[#C94444] to-[#A03636] text-white rounded-xl p-4 mb-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm opacity-90">{t("th", "ราคาปกติ", "Regular Price")}</p>
-                    <p className="text-lg line-through opacity-75">
-                      ฿{product.promotion.originalPrice.toLocaleString()}/{t("th", "เดือน", "month")}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold">
-                      {t("th", product.promotion.label, `${product.promotion.discount}% OFF`)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div className="bg-muted rounded-xl p-6 mb-6">
-              <p className="text-sm text-muted-foreground mb-2">{t("th", "ราคาเช่ารายเดือน", "Monthly Rental Price")}</p>
-              <p className="text-4xl font-bold text-primary mb-4">{product.rentalPrice}</p>
-              {product.promotion && (
-                <p className="text-sm text-green-600 font-semibold">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 mb-6 border-2 border-primary/20">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {t("th", "ราคาพิเศษสำหรับคุณ", "Special Price for You")}
+                </p>
+                <p className="text-3xl font-bold text-primary mb-3">
+                  {t("th", "ติดต่อสอบถามราคา", "Contact for Pricing")}
+                </p>
+                <p className="text-sm text-muted-foreground">
                   {t(
                     "th",
-                    `ประหยัด ฿${(product.promotion.originalPrice - product.priceValue).toLocaleString()}/เดือน`,
-                    `Save ฿${(product.promotion.originalPrice - product.priceValue).toLocaleString()}/month`,
+                    "เรามีแพ็คเกจที่เหมาะสมกับทุกความต้องการ ติดต่อเราเพื่อรับใบเสนอราคาพิเศษ",
+                    "We have packages suitable for every need. Contact us for a special quote",
                   )}
                 </p>
-              )}
-            </div>
-
-            <div className="bg-card border-2 border-primary/30 rounded-xl p-6 mb-6">
-              <p className="text-sm text-muted-foreground mb-2">{t("th", "ราคาขายเครื่อง", "Selling Price")}</p>
-              <p className="text-3xl font-bold text-foreground">{product.sellingPrice}</p>
-              <p className="text-xs text-muted-foreground mt-2">
-                {t("th", "ราคาสำหรับซื้อเครื่องทันที", "Price for immediate purchase")}
-              </p>
+              </div>
             </div>
 
             <p className="text-muted-foreground leading-relaxed mb-6">
@@ -1115,14 +1093,14 @@ export default function ProductDetailPage() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
                 <Phone className="h-5 w-5 mr-2" />
-                {t("th", "ติดต่อเช่าเลย", "Contact to Rent")}
+                {t("th", "ติดต่อสอบถามราคา", "Contact for Pricing")}
               </Button>
               <Button
                 variant="outline"
                 className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-xl py-6 text-lg font-medium bg-transparent"
               >
                 <Mail className="h-5 w-5 mr-2" />
-                {t("th", "สอบถามข้อมูล", "Inquire")}
+                {t("th", "ส่งข้อความ", "Send Message")}
               </Button>
             </div>
 
@@ -1264,14 +1242,14 @@ export default function ProductDetailPage() {
               <div className="space-y-3">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-6">
                   <Phone className="h-5 w-5 mr-2" />
-                  {t("th", "โทร 02-XXX-XXXX", "Call 02-XXX-XXXX")}
+                  {t("th", "ติดต่อสอบถามราคา", "Contact for Pricing")}
                 </Button>
                 <Button
                   variant="outline"
                   className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-xl py-6 bg-transparent"
                 >
                   <Mail className="h-5 w-5 mr-2" />
-                  {t("th", "ส่งอีเมล", "Send Email")}
+                  {t("th", "ส่งข้อความ", "Send Message")}
                 </Button>
               </div>
             </div>

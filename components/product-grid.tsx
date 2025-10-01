@@ -15,18 +15,9 @@ const products = [
     brand: "Canon",
     type: "Multifunction",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NvxaHKgSAYv74IDYsjZ89auoVUqpUG.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿3,500", "ความเร็ว 30 หน้าต่อนาที", "พิมพ์ 2 หน้าอัตโนมัติ", "รวมบริการบำรุงรักษา"],
+    features: ["ความเร็ว 30 หน้าต่อนาที", "พิมพ์ 2 หน้าอัตโนมัติ", "รวมบริการบำรุงรักษา"],
     isNew: false,
     isHot: true,
-    rentalPrice: "฿3,500/เดือน",
-    priceValue: 3500,
-    sellingPrice: "฿195,000",
-    sellingPriceValue: 195000,
-    promotion: {
-      discount: 20,
-      originalPrice: 4375,
-      label: "ลด 20%",
-    },
   },
   {
     id: 2,
@@ -34,13 +25,9 @@ const products = [
     brand: "Canon",
     type: "Multifunction",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y97Slbi9CWzCv3MJTRJsO36p0jZWXB.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿4,800", "ความเร็ว 45 หน้าต่อนาที", "Multifunction ครบครัน", "รวมบริการบำรุงรักษา"],
+    features: ["ความเร็ว 45 หน้าต่อนาที", "Multifunction ครบครัน", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: false,
-    rentalPrice: "฿4,800/เดือน",
-    priceValue: 4800,
-    sellingPrice: "฿285,000",
-    sellingPriceValue: 285000,
   },
   {
     id: 3,
@@ -48,18 +35,9 @@ const products = [
     brand: "Canon",
     type: "เครื่องพิมพ์",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HJ6ab0BgaOBYir6F0yEGSnM8abhaSf.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿1,200", "เครื่องพิมพ์สี Inkjet", "ประหยัดค่าหมึก", "เหมาะสำหรับงานกราฟิก"],
+    features: ["เครื่องพิมพ์สี Inkjet", "ประหยัดค่าหมึก", "เหมาะสำหรับงานกราฟิก"],
     isNew: false,
     isHot: false,
-    rentalPrice: "฿1,200/เดือน",
-    priceValue: 1200,
-    sellingPrice: "฿18,900",
-    sellingPriceValue: 18900,
-    promotion: {
-      discount: 15,
-      originalPrice: 1412,
-      label: "ลด 15%",
-    },
   },
   {
     id: 4,
@@ -67,13 +45,9 @@ const products = [
     brand: "Xerox",
     type: "Multifunction",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VsXTskxMpXJW3YyNH9244U9cRsD5jA.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿7,500", "ความเร็ว 55 หน้าต่อนาที", "ขาวดำความละเอียดสูง", "รวมบริการบำรุงรักษา"],
+    features: ["ความเร็ว 55 หน้าต่อนาที", "ขาวดำความละเอียดสูง", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
-    rentalPrice: "฿7,500/เดือน",
-    priceValue: 7500,
-    sellingPrice: "฿520,000",
-    sellingPriceValue: 520000,
   },
   {
     id: 5,
@@ -81,13 +55,9 @@ const products = [
     brand: "Xerox",
     type: "Multifunction",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7H0WNiTrhc6WGOLLvV8VBgmhTMyO3u.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿9,800", "พิมพ์สี 70 หน้าต่อนาที", "จอสัมผัสขนาดใหญ่", "รวมบริการบำรุงรักษา"],
+    features: ["พิมพ์สี 70 หน้าต่อนาที", "จอสัมผัสขนาดใหญ่", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
-    rentalPrice: "฿9,800/เดือน",
-    priceValue: 9800,
-    sellingPrice: "฿750,000",
-    sellingPriceValue: 750000,
   },
   {
     id: 6,
@@ -95,13 +65,9 @@ const products = [
     brand: "Xerox",
     type: "Multifunction",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jOX2oA0Ist08K1K887m81p9kYethSd.png",
-    features: ["เช่ารายเดือนเริ่มต้น ฿8,500", "พิมพ์สี 55 หน้าต่อนาที", "เทคโนโลยีล้ำสมัย", "รวมบริการบำรุงรักษา"],
+    features: ["พิมพ์สี 55 หน้าต่อนาที", "เทคโนโลยีล้ำสมัย", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: false,
-    rentalPrice: "฿8,500/เดือน",
-    priceValue: 8500,
-    sellingPrice: "฿650,000",
-    sellingPriceValue: 650000,
   },
   {
     id: 7,
@@ -109,18 +75,9 @@ const products = [
     brand: "Ricoh",
     type: "Multifunction",
     image: "/ricoh-mpc3004-color-multifunction.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿5,200", "พิมพ์สี 30 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
+    features: ["พิมพ์สี 30 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
-    rentalPrice: "฿5,200/เดือน",
-    priceValue: 5200,
-    sellingPrice: "฿320,000",
-    sellingPriceValue: 320000,
-    promotion: {
-      discount: 25,
-      originalPrice: 6933,
-      label: "ลด 25%",
-    },
   },
   {
     id: 8,
@@ -128,13 +85,9 @@ const products = [
     brand: "Ricoh",
     type: "Multifunction",
     image: "/ricoh-im-2701-multifunction.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿3,200", "ความเร็ว 27 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
+    features: ["ความเร็ว 27 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: false,
-    rentalPrice: "฿3,200/เดือน",
-    priceValue: 3200,
-    sellingPrice: "฿135,000",
-    sellingPriceValue: 135000,
   },
   {
     id: 9,
@@ -142,18 +95,9 @@ const products = [
     brand: "Ricoh",
     type: "Multifunction",
     image: "/ricoh-im-2702-multifunction.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿3,500", "ความเร็ว 27 หน้าต่อนาที", "พิมพ์ 2 หน้าอัตโนมัติ", "รวมบริการบำรุงรักษา"],
+    features: ["ความเร็ว 27 หน้าต่อนาที", "พิมพ์ 2 หน้าอัตโนมัติ", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
-    rentalPrice: "฿3,500/เดือน",
-    priceValue: 3500,
-    sellingPrice: "฿165,000",
-    sellingPriceValue: 165000,
-    promotion: {
-      discount: 15,
-      originalPrice: 4118,
-      label: "ลด 15%",
-    },
   },
   {
     id: 10,
@@ -161,13 +105,9 @@ const products = [
     brand: "Ricoh",
     type: "Multifunction",
     image: "/ricoh-mpc5503-color-multifunction.jpg",
-    features: ["เช่ารายเดือนเริ่มต้น ฿6,800", "พิมพ์สี 55 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
+    features: ["พิมพ์สี 55 หน้าต่อนาที", "จอสัมผัส 10.1 นิ้ว", "รวมบริการบำรุงรักษา"],
     isNew: true,
     isHot: true,
-    rentalPrice: "฿6,800/เดือน",
-    priceValue: 6800,
-    sellingPrice: "฿485,000",
-    sellingPriceValue: 485000,
   },
 ]
 
@@ -185,8 +125,6 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
 
   const safeFilters = filters || { brands: [], types: [], priceRanges: [] }
 
-  const promotionProducts = products.filter((product) => product.promotion)
-
   const filteredProducts = products.filter((product) => {
     // Filter by brand
     if (safeFilters.brands.length > 0 && !safeFilters.brands.includes(product.brand)) {
@@ -198,27 +136,11 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
       return false
     }
 
-    // Filter by price range
-    if (safeFilters.priceRanges.length > 0) {
-      const matchesPrice = safeFilters.priceRanges.some((range) => {
-        if (range === "ต่ำกว่า ฿2,000") return product.priceValue < 2000
-        if (range === "฿2,000 - ฿3,500") return product.priceValue >= 2000 && product.priceValue <= 3500
-        if (range === "฿3,500 - ฿5,000") return product.priceValue > 3500 && product.priceValue <= 5000
-        if (range === "มากกว่า ฿5,000") return product.priceValue > 5000
-        return false
-      })
-      if (!matchesPrice) return false
-    }
-
     return true
   })
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
-      case "price-low":
-        return a.priceValue - b.priceValue
-      case "price-high":
-        return b.priceValue - a.priceValue
       case "name-asc":
         return a.name.localeCompare(b.name)
       case "name-desc":
@@ -256,85 +178,6 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
 
   return (
     <div>
-      {promotionProducts.length > 0 && (
-        <div className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground mb-3">
-              {t("th", "โปรโมชั่นพิเศษ", "Special Promotions")}
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              {t("th", "ข้อเสนอสุดพิเศษสำหรับคุณ ประหยัดสูงสุด 25%", "Exclusive offers for you - Save up to 25%")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {promotionProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-card rounded-2xl shadow-lg border-2 border-[#C94444] hover:shadow-2xl transition-all duration-300 group overflow-hidden relative"
-              >
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#C94444] to-[#A03636] text-white text-center py-2 font-bold text-sm">
-                  {t("th", product.promotion!.label, `${product.promotion!.discount}% OFF`)}
-                </div>
-
-                <div className="relative p-6 pt-12">
-                  {product.isNew && (
-                    <span className="absolute top-14 left-4 bg-accent text-accent-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
-                      {t("th", "ใหม่", "New")}
-                    </span>
-                  )}
-                  {product.isHot && (
-                    <span className="absolute top-14 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-10">
-                      {t("th", "ยอดนิยม", "Popular")}
-                    </span>
-                  )}
-
-                  <div className="flex justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-                    <img
-                      src={product.image || "/placeholder.svg?height=150&width=150&query=office printer"}
-                      alt={product.name}
-                      className="h-36 w-auto object-contain drop-shadow-lg"
-                    />
-                  </div>
-
-                  <h3 className="font-serif text-lg font-light text-foreground mb-3 text-center leading-tight min-h-[3rem]">
-                    {product.name}
-                  </h3>
-
-                  <div className="text-center mb-4">
-                    <div className="flex items-center justify-center gap-2 mb-1">
-                      <span className="text-2xl font-bold text-[#C94444]">{product.rentalPrice}</span>
-                    </div>
-                    <div className="text-sm text-muted-foreground line-through">
-                      {t(
-                        "th",
-                        `฿${product.promotion!.originalPrice.toLocaleString()}/เดือน`,
-                        `฿${product.promotion!.originalPrice.toLocaleString()}/month`,
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="flex space-x-2">
-                    <Link href={`/products/${product.id}`} className="flex-1">
-                      <Button className="w-full bg-[#C94444] hover:bg-[#A03636] text-white rounded-xl py-2 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300">
-                        <Eye className="h-4 w-4 mr-1" />
-                        {t("th", "ดูรายละเอียด", "View")}
-                      </Button>
-                    </Link>
-                    <Button
-                      variant="outline"
-                      className="border-2 border-[#C94444] text-[#C94444] hover:bg-[#C94444] hover:text-white rounded-xl p-2 shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent"
-                    >
-                      <Heart className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
       <div ref={productGridRef}>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0 mb-8 md:mb-10">
           <div>
@@ -352,8 +195,6 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="default">{t("th", "เริ่มต้น", "Default")}</SelectItem>
-                <SelectItem value="price-low">{t("th", "ราคา: ต่ำ-สูง", "Price: Low-High")}</SelectItem>
-                <SelectItem value="price-high">{t("th", "ราคา: สูง-ต่ำ", "Price: High-Low")}</SelectItem>
                 <SelectItem value="name-asc">{t("th", "ชื่อ: A-Z", "Name: A-Z")}</SelectItem>
                 <SelectItem value="name-desc">{t("th", "ชื่อ: Z-A", "Name: Z-A")}</SelectItem>
                 <SelectItem value="popular">{t("th", "ยอดนิยม", "Popular")}</SelectItem>
@@ -414,6 +255,11 @@ export function ProductGrid({ filters, sortBy, onSortChange }: ProductGridProps)
                       </li>
                     ))}
                   </ul>
+
+                  <div className="bg-muted rounded-xl p-4 mb-4 text-center">
+                    <p className="text-sm text-muted-foreground mb-1">{t("th", "ราคาพิเศษ", "Special Price")}</p>
+                    <p className="text-lg font-semibold text-primary">{t("th", "ติดต่อสอบถาม", "Contact for Pricing")}</p>
+                  </div>
 
                   <div className="flex space-x-3">
                     <Link href={`/products/${product.id}`} className="flex-1">
