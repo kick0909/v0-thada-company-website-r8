@@ -98,7 +98,7 @@ export function ProductFilters({ filters, onFilterChange }: ProductFiltersProps)
         </button>
         {expandedSections.includes("type") && (
           <div className="space-y-3 ml-4">
-            {["เครื่องถ่ายเอกสาร", "เครื่องพิมพ์", "เครื่องสแกน", "Multifunction"].map((type) => (
+            {["เครื่องถ่ายเอกสาร", "เครื่องพิมพ์", "เครื่องสแกน", "Multifunction", "ตลับหมึก"].map((type) => (
               <label key={type} className="flex items-center space-x-3 cursor-pointer group">
                 <input
                   type="checkbox"
