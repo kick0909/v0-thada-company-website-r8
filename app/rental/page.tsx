@@ -23,7 +23,7 @@ const rentalPackages = [
   },
   {
     name: "แพ็คเกจมาตรฐาน",
-    price: "4,500",
+    price: "3,500",
     period: "เดือน",
     description: "เหมาะสำหรับสำนักงานขนาดกลาง 10-30 คน",
     features: [
@@ -39,7 +39,7 @@ const rentalPackages = [
   },
   {
     name: "แพ็คเกจองค์กร",
-    price: "8,500",
+    price: "4,000",
     period: "เดือน",
     description: "เหมาะสำหรับองค์กรใหญ่ 30+ คน",
     features: [

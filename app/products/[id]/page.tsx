@@ -11,7 +11,7 @@ const products = [
     name: "Canon C5535",
     brand: "Canon",
     type: "Multifunction",
-    image: "/canon-office-printer-copier-machine-white-backgrou.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NvxaHKgSAYv74IDYsjZ89auoVUqpUG.png",
     rentalPrice: "฿3,500/เดือน",
     priceValue: 3500,
     sellingPrice: "฿195,000",
