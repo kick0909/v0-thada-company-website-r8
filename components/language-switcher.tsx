@@ -32,7 +32,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <Button variant="ghost" size="sm" className="gap-2" onClick={() => setIsOpen(!isOpen)}>
         <Languages className="h-4 w-4" />
-        <span className="text-sm font-medium">{language === "th" ? "ไทย" : "EN"}</span>
+        <span className="text-sm font-medium">{language === "th" ? "ไทย" : "GB"}</span>
       </Button>
 
       {isOpen && (

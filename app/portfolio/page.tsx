@@ -55,6 +55,18 @@ const portfolioImages = [
     alt: "Security monitoring center installation",
     category: "office",
   },
+  {
+    id: 9,
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/39401_0-NjzvDwderg9iy3MqB4tKq0zZF3JnLo.jpg",
+    alt: "Technician with Canon copier installation",
+    category: "installation",
+  },
+  {
+    id: 10,
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/39399_0-S4rqPWeiVtZat8EIotUptBbBuWLpwm.jpg",
+    alt: "Canon imageRUNNER touchscreen interface",
+    category: "office",
+  },
 ]
 
 const stats = [
